@@ -275,8 +275,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto space-y-24">
             {/* Feature 1: Photo Editing - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
-              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+              {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
+              <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -295,8 +295,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
-              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -314,15 +314,35 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+                {/* Headline - Desktop only (hidden on mobile, shown above) */}
+                <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                    <svg
+                      className="w-8 h-8 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
+                </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Možná si říkáte, že vlastní fotky si můžete zveřejnit sami, s námi je rozdíl v tom, že my z
                   jednoduchých fotek z telefonu vytvoříme prémiový obsah pomocí AI technologie.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
+                <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -335,8 +355,8 @@ export default function Home() {
 
             {/* Feature 2: Advertising - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
-              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+              {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
+              <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -355,8 +375,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
-              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -388,15 +408,35 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+                {/* Headline - Desktop only (hidden on mobile, shown above) */}
+                <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                    <svg
+                      className="w-8 h-8 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
+                </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Umíme posty včetně textů, storíčka i reels, jejich počty pak záleží na vašem předplatném. Pokud během
                   měsíce potřebujete aktuální příspěvky připravíme je také.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
+                <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -409,8 +449,8 @@ export default function Home() {
 
             {/* Feature 3: Professional Posts - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
-              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+              {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
+              <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -429,24 +469,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
               </div>
-              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
-                {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Pokud by se vám nějaký příspěvek nelíbil, obratem ho předěláme.
-                </p>
-                {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
-                  <Link
-                    href="/trial"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
-                  >
-                    Vyzkoušet zdarma
-                  </Link>
-                </div>
-              </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
-              <div className="relative order-2 lg:order-3 flex-shrink-0 w-full">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
+              <div className="relative order-2 lg:order-2 flex-shrink-0 w-full">
                 <Card className="p-4 lg:p-6 border-2 border-border bg-background w-full">
                   <Calendar
                     className="w-full"
@@ -515,12 +539,48 @@ export default function Home() {
                   </div>
                 </Card>
               </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+                {/* Headline - Desktop only (hidden on mobile, shown above) */}
+                <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                    <svg
+                      className="w-8 h-8 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
+                </div>
+                {/* Text - Mobile: order 3, Desktop: part of text column */}
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
+                  Pokud by se vám nějaký příspěvek nelíbil, obratem ho předěláme.
+                </p>
+                {/* CTA - Mobile: order 4, Desktop: part of text column */}
+                <div className="pt-2 flex-shrink-0 mt-auto">
+                  <Link
+                    href="/trial"
+                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  >
+                    Vyzkoušet zdarma
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
-              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+              {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
+              <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -539,8 +599,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
-              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
@@ -558,12 +618,49 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+                {/* Headline - Desktop only (hidden on mobile, shown above) */}
+                <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                    <svg
+                      className="w-8 h-8 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
+                </div>
+                {/* Text - Mobile: order 3, Desktop: part of text column */}
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
+                  Postaráme se o kompletní nastavení a správu reklam, aby oslovily lidi ve vašem okolí (do 1 km) nebo
+                  podle zájmů.
+                </p>
+                {/* CTA - Mobile: order 4, Desktop: part of text column */}
+                <div className="pt-2 flex-shrink-0 mt-auto">
+                  <Link
+                    href="/trial"
+                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  >
+                    Vyzkoušet zdarma
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
-              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+              {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
+              <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -582,8 +679,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
-              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -601,15 +698,35 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+                {/* Headline - Desktop only (hidden on mobile, shown above) */}
+                <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                    <svg
+                      className="w-8 h-8 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
+                </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Už žádné nudné fotografování menu. Vytvoříme pro vás profesionální design, který automaticky
                   zveřejníme podle vašeho harmonogramu.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
+                <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
