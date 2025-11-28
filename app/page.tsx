@@ -489,31 +489,29 @@ export default function Home() {
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
-                    <div className="bg-[#e5ddd5] h-full flex flex-col p-2 lg:p-3">
-                      <div className="flex-1 overflow-y-auto flex flex-col justify-end space-y-1.5 lg:space-y-2 px-1">
-                        {/* Message 1: From HeroContent */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full">
-                          <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                            <span className="text-[10px] lg:text-xs font-bold text-black">HC</span>
-                          </div>
-                          <div className="flex-1 min-w-0 flex flex-col items-start">
-                            <div className="bg-white rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Posíláme vám plán příspěvků na příští měsíc
-                              </div>
+                    <div className="bg-[#e5ddd5] h-full w-full p-3 flex flex-col">
+                      <div className="flex-1 w-full overflow-y-auto">
+                        <div className="flex flex-col justify-end min-h-full space-y-2 pb-2">
+                          {/* Message 1: From HeroContent */}
+                          <div className="flex items-start gap-2 w-full">
+                            <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                              <span className="text-xs font-bold text-black">HC</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:34</div>
-                          </div>
-                        </div>
-                        {/* Message 2: From Client */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full justify-end">
-                          <div className="flex-1 min-w-0 flex flex-col items-end">
-                            <div className="bg-[#dcf8c6] rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Schváleno
+                            <div className="flex flex-col items-start max-w-[75%]">
+                              <div className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Posíláme vám plán příspěvků na příští měsíc</p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:34</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:35</div>
+                          </div>
+                          {/* Message 2: From Client */}
+                          <div className="flex items-start gap-2 w-full justify-end">
+                            <div className="flex flex-col items-end max-w-[75%]">
+                              <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Schváleno</p>
+                              </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:35</span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -594,60 +592,56 @@ export default function Home() {
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
-                    <div className="bg-[#e5ddd5] h-full flex flex-col p-2 lg:p-3">
-                      <div className="flex-1 overflow-y-auto flex flex-col justify-end space-y-1.5 lg:space-y-2 px-1">
-                        {/* Message 1: From Client */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full justify-end">
-                          <div className="flex-1 min-w-0 flex flex-col items-end">
-                            <div className="bg-[#dcf8c6] rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Příští týden máme u nás akci, udělejte mi na ni reklamu.
+                    <div className="bg-[#e5ddd5] h-full w-full p-3 flex flex-col">
+                      <div className="flex-1 w-full overflow-y-auto">
+                        <div className="flex flex-col justify-end min-h-full space-y-2 pb-2">
+                          {/* Message 1: From Client */}
+                          <div className="flex items-start gap-2 w-full justify-end">
+                            <div className="flex flex-col items-end max-w-[75%]">
+                              <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Příští týden máme u nás akci, udělejte mi na ni reklamu.</p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:34</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:34</div>
                           </div>
-                        </div>
-                        {/* Message 2: From HeroContent */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full">
-                          <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                            <span className="text-[10px] lg:text-xs font-bold text-black">HC</span>
-                          </div>
-                          <div className="flex-1 min-w-0 flex flex-col items-start">
-                            <div className="bg-white rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                <div>Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum</div>
-                                <div>Text: Tématika akce, doba trvání a více detailů</div>
-                                <div>Cílení: Okruh 1km od vašeho podniku</div>
-                                <div>Rozpočet: 500 Kč</div>
-                                <div className="mt-1">Je to takto v pořádku?</div>
+                          {/* Message 2: From HeroContent */}
+                          <div className="flex items-start gap-2 w-full">
+                            <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                              <span className="text-xs font-bold text-black">HC</span>
+                            </div>
+                            <div className="flex flex-col items-start max-w-[75%]">
+                              <div className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">
+                                  Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum<br />
+                                  Text: Tématika akce, doba trvání a více detailů<br />
+                                  Cílení: Okruh 1km od vašeho podniku<br />
+                                  Rozpočet: 500 Kč<br />
+                                  <span className="mt-1 block">Je to takto v pořádku?</span>
+                                </p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:35</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:35</div>
                           </div>
-                        </div>
-                        {/* Message 3: From Client */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full justify-end">
-                          <div className="flex-1 min-w-0 flex flex-col items-end">
-                            <div className="bg-[#dcf8c6] rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Ano
+                          {/* Message 3: From Client */}
+                          <div className="flex items-start gap-2 w-full justify-end">
+                            <div className="flex flex-col items-end max-w-[75%]">
+                              <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Ano</p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:36</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:36</div>
                           </div>
-                        </div>
-                        {/* Message 4: From HeroContent */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full">
-                          <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                            <span className="text-[10px] lg:text-xs font-bold text-black">HC</span>
-                          </div>
-                          <div className="flex-1 min-w-0 flex flex-col items-start">
-                            <div className="bg-white rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Skvěle, zasíláme vám reklamní příspěvek ke schválení
+                          {/* Message 4: From HeroContent */}
+                          <div className="flex items-start gap-2 w-full">
+                            <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                              <span className="text-xs font-bold text-black">HC</span>
+                            </div>
+                            <div className="flex flex-col items-start max-w-[75%]">
+                              <div className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Skvěle, zasíláme vám reklamní příspěvek ke schválení</p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:37</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:37</div>
                           </div>
                         </div>
                       </div>
@@ -729,17 +723,17 @@ export default function Home() {
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
-                    <div className="bg-[#e5ddd5] h-full flex flex-col p-2 lg:p-3">
-                      <div className="flex-1 overflow-y-auto flex flex-col justify-end space-y-1.5 lg:space-y-2 px-1">
-                        {/* Message 1: From Client */}
-                        <div className="flex items-start gap-1.5 lg:gap-2 w-full justify-end">
-                          <div className="flex-1 min-w-0 flex flex-col items-end">
-                            <div className="bg-[#dcf8c6] rounded-lg px-2.5 lg:px-3 py-1.5 lg:py-2 shadow-sm max-w-[80%] lg:max-w-[85%]">
-                              <div className="text-[10px] lg:text-xs text-gray-800 leading-relaxed">
-                                Dnes máme na jídelníčku: Hovězí s brambory, Špagety se sýrem, burger.
+                    <div className="bg-[#e5ddd5] h-full w-full p-3 flex flex-col">
+                      <div className="flex-1 w-full overflow-y-auto">
+                        <div className="flex flex-col justify-end min-h-full space-y-2 pb-2">
+                          {/* Message 1: From Client */}
+                          <div className="flex items-start gap-2 w-full justify-end">
+                            <div className="flex flex-col items-end max-w-[75%]">
+                              <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Dnes máme na jídelníčku: Hovězí s brambory, Špagety se sýrem, burger.</p>
                               </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:34</span>
                             </div>
-                            <div className="text-[8px] lg:text-[9px] text-gray-500 mt-0.5 px-1">12:34</div>
                           </div>
                         </div>
                       </div>
