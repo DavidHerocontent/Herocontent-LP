@@ -486,11 +486,11 @@ export default function Home() {
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[280px] lg:h-[400px] overflow-hidden">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                <div className="grid grid-cols-[2fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
-                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0">
                         {/* Message 1: From HeroContent */}
                         <div className="flex items-start gap-2">
                           <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -589,11 +589,11 @@ export default function Home() {
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                <div className="grid grid-cols-[2fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup */}
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
-                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0">
                         {/* Message 1: From Client */}
                         <div className="flex items-start gap-2 justify-end">
                           <div className="flex-1 min-w-0 flex justify-end">
@@ -720,11 +720,11 @@ export default function Home() {
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                <div className="grid grid-cols-[2fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup from Client */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
-                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0">
                         <div className="flex items-start gap-2 justify-end">
                           <div className="flex-1 min-w-0 flex justify-end">
                             <div className="max-w-[85%]">
