@@ -1108,40 +1108,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="bg-muted/50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Začněte jednoduše</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { step: "1", title: "Základní informace", description: "Pošlete odkazy na váš web a sociální sítě." },
-              { step: "2", title: "Přístup k účtům", description: "Poskytněte přístup ke správě sociálních sítí." },
-              {
-                step: "3",
-                title: "Schválení příspěvků",
-                description: "Volitelné – schvalte příspěvky před zveřejněním.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-yellow-400 text-black text-2xl font-bold flex items-center justify-center mx-auto">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-2xl font-bold text-yellow-400 mb-6">A je to!</p>
-            <Button size="lg" className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold">
-              Začít nyní
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Client Showcase Section */}
       <section id="klienti" className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1181,26 +1147,6 @@ export default function Home() {
               ]}
             />
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-yellow-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Připraveni zvýšit zisk své restaurace o 20 % za pouhých 2 500 Kč měsíčně?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Nechte Markétu pracovat za vás a ušetřete náklady – naše služba je 3× levnější než agentura a 2× levnější
-            než SMM manažer.
-          </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-black text-white hover:bg-black/90 font-semibold text-lg px-8"
-          >
-            Získejte více hostů hned
-          </Button>
         </div>
       </section>
 
@@ -1273,29 +1219,47 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
-              <span className="text-xl font-semibold">HeroContent</span>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
+                <span className="text-xl font-semibold">HeroContent</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
-            </p>
-            <div className="flex items-center gap-4">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </Link>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-4 border-t border-border">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
+              </p>
+              <div className="flex items-center gap-6 text-sm">
+                <Link
+                  href="https://herocontent.ai/privacy-policy"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Zásady ochrany osobních údajů
+                </Link>
+                <Link
+                  href="https://herocontent.ai/terms-of-service"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Obchodní podmínky
+                </Link>
+              </div>
             </div>
           </div>
         </div>
