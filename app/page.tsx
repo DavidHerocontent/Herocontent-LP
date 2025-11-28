@@ -295,14 +295,32 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-visible">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-01-a.svg"
                       alt="Původní fotka před úpravou"
                       className="w-full h-full object-contain"
                     />
+                  </div>
+                  {/* Arrow pointing from picture 1 to picture 2 */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:block">
+                    <div className="flex items-center justify-center">
+                      <svg
+                        className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth={3}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
@@ -375,21 +393,32 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+                <div className="grid grid-cols-3 gap-3 lg:gap-4 h-full">
+                  {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-1.png"
-                      alt="Příklad příspěvku 1"
+                      src="/placeholder.jpg"
+                      alt="Instagram post"
                       className="w-full h-full object-cover"
                     />
                   </div>
+                  {/* Instagram Story */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-2.png"
-                      alt="Příklad příspěvku 2"
+                      src="/placeholder.jpg"
+                      alt="Instagram story"
                       className="w-full h-full object-cover"
                     />
+                  </div>
+                  {/* Video */}
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-center justify-center bg-gray-100">
+                    <div className="text-center text-gray-400">
+                      <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-xs">Video placeholder</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -456,12 +485,34 @@ export default function Home() {
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full">
-                <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
-                  <img
-                    src="/images/feature-3-calendar.png"
-                    alt="Kalendář příspěvků na měsíc dopředu"
-                    className="w-full h-auto object-contain"
-                  />
+                <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                  {/* WhatsApp Mockup */}
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex items-end">
+                      <div className="w-full">
+                        <div className="flex items-start gap-2 mb-2">
+                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-bold text-black">HC</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[10px] text-gray-600 mb-0.5">HeroContent</div>
+                            <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
+                              Posíláme vám plán příspěvků na příští měsíc
+                            </div>
+                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Calendar Picture */}
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                    <img
+                      src="/placeholder.jpg"
+                      alt="Kalendář příspěvků"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
@@ -527,17 +578,31 @@ export default function Home() {
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
-                    <img
-                      src="/images/feature-4-ad-1.png"
-                      alt="Reklamní kampaň - BISTRO ŠÁLEK pizza"
-                      className="w-full h-full object-cover"
-                    />
+                  {/* WhatsApp Mockup from Client */}
+                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex items-end">
+                      <div className="w-full">
+                        <div className="flex items-start gap-2 mb-2 justify-end">
+                          <div className="flex-1 min-w-0 flex justify-end">
+                            <div className="max-w-[85%]">
+                              <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                Příští týden máme u nás akci, udělejte mi na ni reklamu.
+                              </div>
+                              <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
+                            </div>
+                          </div>
+                          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-semibold text-gray-700">K</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  {/* Ad Creative */}
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-4-ad-2.png"
-                      alt="Reklamní kampaň - BISTRO ŠÁLEK pastries a káva"
+                      src="/placeholder.jpg"
+                      alt="Reklamní kampaň - vytvořená reklama"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -607,17 +672,31 @@ export default function Home() {
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
-                    <img
-                      src="/images/feature-5-menu-1.png"
-                      alt="Menu - Restaurace u Otty"
-                      className="w-full h-full object-cover"
-                    />
+                  {/* WhatsApp Mockup from Client */}
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex items-end">
+                      <div className="w-full">
+                        <div className="flex items-start gap-2 mb-2 justify-end">
+                          <div className="flex-1 min-w-0 flex justify-end">
+                            <div className="max-w-[85%]">
+                              <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                Dnes máme na jídelníčku: Hovězí s brambory, Špagety se sýrem, burger.
+                              </div>
+                              <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
+                            </div>
+                          </div>
+                          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-semibold text-gray-700">K</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  {/* Daily Menu Created Automatically */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-5-menu-2.png"
-                      alt="Menu - HIMALAYA"
+                      src="/placeholder.jpg"
+                      alt="Automaticky vytvořené denní menu"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -1048,6 +1127,72 @@ export default function Home() {
           >
             Získejte více hostů hned
           </Button>
+        </div>
+      </section>
+
+      {/* O nás Section */}
+      <section id="o-nas" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">O nás</h2>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            {/* Founders Grid */}
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-12">
+              {/* Elisey */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <img
+                    src="/placeholder.jpg"
+                    alt="Elisey"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Elisey</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Začínal jako majitel restaurace a firmy s krabičkovou dietou, později rozjel úspěšný projekt pro rychlé doručování potravin. Díky zkušenostem z obou světů pochopil, že gastro podniky potřebují být vidět na sociálních sítích, ale jejich majitelé na to často nemají čas.
+                </p>
+              </div>
+
+              {/* David */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <img
+                    src="/placeholder.jpg"
+                    alt="David"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">David</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Vedl marketingovou agenturu i reklamní platformu, kde pomáhal desítkám značek růst díky spolupráci s influencery. Uvědomil si, že velká část práce agentur se dá zautomatizovat a nabídnout restauracím za zlomek ceny.
+                </p>
+              </div>
+
+              {/* Anton */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <img
+                    src="/placeholder.jpg"
+                    alt="Anton"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Anton</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Byl ředitelem vývoje v několika technologických projektech a mimo to je také expert na umělou inteligenci. Právě jeho technologie se stala srdcem HeroContentu – systému, který restauracím přivádí více hostů efektivněji než kdy dřív.
+                </p>
+              </div>
+            </div>
+
+            {/* Mission Statement */}
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="text-xl lg:text-2xl font-semibold leading-relaxed text-foreground">
+                Naším cílem je, aby všechny marketingové aktivity restaurace šlo ovládat jednoduše – jen pomocí několika zpráv v telefonu.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
