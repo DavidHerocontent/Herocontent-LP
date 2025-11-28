@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="story12a" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#story12a)"/>
+  <g fill="#fff1f2" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="540" y="420" font-size="110" font-weight="bold">Večeře při svíčkách</text>
+    <text x="540" y="720" font-size="70">Varianta A</text>
+    <text x="540" y="1030" font-size="64">Rezervace pro dva</text>
+    <text x="540" y="1340" font-size="52">1080 × 1920 · Restaurace</text>
+  </g>
+</svg>
+

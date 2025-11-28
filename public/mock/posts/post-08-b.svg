@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="post08b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#post08b)"/>
+  <g fill="#ecfeff" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="540" y="320" font-size="84" font-weight="bold">Festival grilu</text>
+    <text x="540" y="520" font-size="54">Varianta B</text>
+    <text x="540" y="760" font-size="46">Grilovaná zelenina, uzené tofu</text>
+    <text x="540" y="980" font-size="40">1080 × 1350 · Restaurace</text>
+  </g>
+</svg>
+

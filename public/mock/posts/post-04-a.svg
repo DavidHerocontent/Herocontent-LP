@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="post04a" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#post04a)"/>
+  <g fill="#f0fdfa" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="540" y="320" font-size="84" font-weight="bold">Rodinná neděle</text>
+    <text x="540" y="520" font-size="54">Varianta A</text>
+    <text x="540" y="760" font-size="46">Sdílené mísy, klasická kuchyně</text>
+    <text x="540" y="980" font-size="40">1080 × 1350 · Restaurace</text>
+  </g>
+</svg>
+
