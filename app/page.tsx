@@ -107,7 +107,22 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="font-semibold" asChild>
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white border-[#25D366]"
+              asChild
+            >
+              <a 
+                href="https://wa.me/420608570962" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Kontaktovat nás na WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
               <Link href="/login">Přihlásit se</Link>
             </Button>
             <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold" asChild>
@@ -730,9 +745,21 @@ export default function Home() {
                           <div className="flex items-start gap-2 w-full justify-end">
                             <div className="flex flex-col items-end max-w-[75%]">
                               <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
-                                <p className="text-xs text-gray-800 m-0">Dnes máme na jídelníčku: Hovězí s brambory, Špagety se sýrem, burger.</p>
+                                <p className="text-xs text-gray-800 m-0">Dnes máme na jídelníčku: Hovězí s brambory za 189, Špagety carbonara 179 Kč, burger za 179.</p>
                               </div>
                               <span className="text-[9px] text-gray-500 mt-0.5">12:34</span>
+                            </div>
+                          </div>
+                          {/* Message 2: From HeroContent */}
+                          <div className="flex items-start gap-2 w-full">
+                            <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                              <span className="text-xs font-bold text-black">HC</span>
+                            </div>
+                            <div className="flex flex-col items-start max-w-[75%]">
+                              <div className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                                <p className="text-xs text-gray-800 m-0">Skvěle, vytvořili jsme vaše denní menu a zvěřejnili na Facebooku a Instagramu</p>
+                              </div>
+                              <span className="text-[9px] text-gray-500 mt-0.5">12:35</span>
                             </div>
                           </div>
                         </div>
