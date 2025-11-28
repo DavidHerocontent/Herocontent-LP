@@ -98,51 +98,62 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative max-w-xs mx-auto lg:ml-auto lg:mr-0">
-            <div className="absolute -left-64 top-12 hidden xl:block z-10">
-              <div className="relative">
+          <div className="relative max-w-4xl mx-auto lg:ml-auto lg:mr-0">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6">
+              {/* Original Photo */}
+              <div className="flex-shrink-0">
                 <img
                   src="/images/image.png"
-                  alt=""
-                  role="presentation"
-                  className="w-60 h-60 object-cover rounded-lg shadow-lg border-2 border-gray-200"
+                  alt="Původní fotka klienta"
+                  className="w-48 h-48 lg:w-60 lg:h-60 object-cover rounded-lg shadow-lg border-2 border-gray-200"
                 />
-                {/* Hand-drawn style diagonal arrow pointing to reel */}
-                <div className="absolute left-[calc(100%+16px)] top-24">
-                  <div className="bg-yellow-400 text-black px-3 py-1.5 rounded-lg font-semibold text-sm whitespace-nowrap shadow-lg mb-2">
-                    vaše fotky s HeroContent
-                  </div>
-                  <svg
-                    className="w-32 h-32 text-yellow-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 140 140"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    {/* Diagonal curved arrow path - wider stroke */}
-                    <path d="M 10 10 Q 60 40, 120 100" strokeWidth="4" fill="none" />
-                    {/* Arrow head - properly angled to match the curve direction */}
-                    <path d="M 120 100 L 110 90" strokeWidth="4" fill="none" />
-                    <path d="M 120 100 L 112 108" strokeWidth="4" fill="none" />
-                  </svg>
+              </div>
+
+              {/* Plus Sign */}
+              <div className="flex items-center justify-center">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
+                  <span className="text-2xl lg:text-3xl font-bold text-yellow-400">+</span>
                 </div>
               </div>
-            </div>
-            {/* </CHANGE> */}
-            <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-4 border border-yellow-400/30">
-              <video
-                className="rounded-lg shadow-2xl w-full h-auto"
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-label="Demo video HeroContent aplikace"
-              >
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
-                Váš prohlížeč nepodporuje video element.
-              </video>
+
+              {/* HeroContent AI Box */}
+              <div className="flex-shrink-0">
+                <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-lg p-4 lg:p-6 border-2 border-yellow-400/50 shadow-lg">
+                  <div className="text-center space-y-2">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-yellow-400 rounded-lg flex items-center justify-center mb-2">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded flex items-center justify-center">
+                        <span className="text-yellow-400 font-bold text-xl lg:text-2xl">AI</span>
+                      </div>
+                    </div>
+                    <p className="text-sm lg:text-base font-semibold text-foreground">HeroContent</p>
+                    <p className="text-xs lg:text-sm text-muted-foreground">AI</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Equals Sign */}
+              <div className="flex items-center justify-center">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
+                  <span className="text-2xl lg:text-3xl font-bold text-yellow-400">=</span>
+                </div>
+              </div>
+
+              {/* Video/Reel */}
+              <div className="flex-shrink-0">
+                <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-4 border border-yellow-400/30 shadow-2xl">
+                  <video
+                    className="rounded-lg w-full h-auto max-w-[200px] lg:max-w-[240px]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label="Výsledné video vytvořené pomocí HeroContent AI"
+                  >
+                    <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
+                    Váš prohlížeč nepodporuje video element.
+                  </video>
+                </div>
+              </div>
             </div>
           </div>
         </div>
