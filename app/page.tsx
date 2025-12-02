@@ -281,7 +281,7 @@ export default function Home() {
             <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
           </div>
 
-          <div className="max-w-7xl mx-auto space-y-24">
+          <div className="max-w-7xl mx-auto space-y-12">
             {/* Feature 1: Photo Editing - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
@@ -302,7 +302,7 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-visible">
@@ -361,13 +361,17 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Možná si říkáte, že vlastní fotky si můžete zveřejnit sami, s námi je rozdíl v tom, že my z
-                  jednoduchých fotek z telefonu vytvoříme prémiový obsah pomocí AI technologie.
-                </p>
+                <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
+                  <p>
+                    Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala. Bude čistá, světlejší a profesionální.
+                  </p>
+                  <p>
+                    Váš podnik bude vypadat skvěle i bez drahého focení za desítky tisíc ročně.
+                  </p>
+                </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
@@ -400,7 +404,7 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky i s texty</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -452,13 +456,17 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky i s texty</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Umíme posty včetně textů, storíčka i reels, jejich počty pak záleží na vašem předplatném. Pokud během
-                  měsíce potřebujete aktuální příspěvky připravíme je také.
-                </p>
+                <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
+                  <p>
+                    Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
+                  </p>
+                  <p>
+                    Ušetříte čas a nemusíte nic psát ani vymýšlet. Vše dostanete hotové.
+                  </p>
+                </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
@@ -491,7 +499,7 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[280px] lg:h-[400px] overflow-hidden">
@@ -556,12 +564,17 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Pokud by se vám nějaký příspěvek nelíbil, obratem ho předěláme.
-                </p>
+                <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
+                  <p>
+                    Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
+                  </p>
+                  <p>
+                    Máte jasno, co kdy vyjde, a žádné prázdné dny nebo chaos v obsahu.
+                  </p>
+                </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
@@ -594,7 +607,7 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Spustíme reklamy jedním potvrzením</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -686,13 +699,17 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Spustíme reklamy jedním potvrzením</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Postaráme se o kompletní nastavení a správu reklam, aby oslovily lidi ve vašem okolí (do 1 km) nebo
-                  podle zájmů.
-                </p>
+                <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
+                  <p>
+                    Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy a informace o tom, na koho budeme cílit.
+                  </p>
+                  <p>
+                    Každý měsíc vás mohou vidět tisíce nových potenciálních zákazníků ve vašem okolí.
+                  </p>
+                </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
@@ -725,7 +742,7 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Zveřejníme denní menu bez focení</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -790,13 +807,17 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Zveřejníme denní menu bez focení</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
-                  Už žádné nudné fotografování menu. Vytvoříme pro vás profesionální design, který automaticky
-                  zveřejníme podle vašeho harmonogramu.
-                </p>
+                <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
+                  <p>
+                    Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
+                  </p>
+                  <p>
+                    Menu bude každý den vypadat dobře a vy se nemusíte o nic starat.
+                  </p>
+                </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
