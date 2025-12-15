@@ -9,6 +9,9 @@ import { Label } from "@/components/ui/label"
 import { Check } from "lucide-react"
 import Link from "next/link"
 
+// User app URL - update this to match your user app URL
+const USER_APP_URL = process.env.NEXT_PUBLIC_USER_APP_URL || "http://localhost:3001"
+
 // Suggested SEO title: "Vyzkoušejte HeroContent zdarma - Správa sociálních sítí pro restaurace"
 // Suggested SEO description: "Zaregistrujte svou restauraci a začněte využívat profesionální správu Instagramu a reklamy. První konzultace zdarma."
 
@@ -74,14 +77,24 @@ export default function TrialPage() {
     setShowError(false)
   }
 
-  const handleCodeVerification = (e: React.FormEvent) => {
+  const handleCodeVerification = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!verificationCode.trim()) {
       setShowError(true)
       return
     }
+    
+    // TODO: Call your registration API to verify code and complete registration
     console.log("Complete form submitted:", formData, "Code:", verificationCode)
-    // Handle code verification and final registration
+    
+    // After successful registration, redirect to user app
+    // You can pass user info or auth token via query params
+    const params = new URLSearchParams({
+      phone: formData.phone,
+      restaurantName: formData.restaurantName,
+      registered: "true"
+    })
+    window.location.href = `${USER_APP_URL}?${params.toString()}`
   }
 
   if (step === "phone") {

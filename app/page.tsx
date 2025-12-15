@@ -329,9 +329,9 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-01-a.svg"
+                      src="/images/photo-before.jpeg"
                       alt="Původní fotka před úpravou"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   {/* Arrow pointing from picture 1 to picture 2 */}
@@ -354,9 +354,9 @@ export default function Home() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-01-b.svg"
+                      src="/images/photo-after.jpeg"
                       alt="Fotka po AI úpravě"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
