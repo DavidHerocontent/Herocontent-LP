@@ -432,27 +432,32 @@ export default function Home() {
                   {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/placeholder.jpg"
-                      alt="Instagram post"
+                      src="/images/post-chicken-burger.png"
+                      alt="Instagram post - Chicken burger"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   {/* Instagram Story */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/placeholder.jpg"
-                      alt="Instagram story"
+                      src="/images/story-pizza.png"
+                      alt="Instagram story - Pizza with spinach and corn"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Video */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-center justify-center bg-gray-100">
-                    <div className="text-center text-gray-400">
-                      <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                      </svg>
-                      <span className="text-xs">Video placeholder</span>
-                    </div>
+                  {/* Reel Video */}
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
+                    <video
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label="Instagram reel vytvořený pomocí HeroContent AI"
+                    >
+                      <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
+                      Váš prohlížeč nepodporuje video element.
+                    </video>
                   </div>
                 </div>
               </div>
@@ -802,11 +807,11 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Daily Menu Created Automatically */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
-                      src="/placeholder.jpg"
+                      src="/images/daily-menu.png"
                       alt="Automaticky vytvořené denní menu"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain object-top"
                     />
                   </div>
                 </div>
