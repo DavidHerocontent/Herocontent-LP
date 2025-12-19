@@ -108,17 +108,15 @@ export default function RegistrationPage() {
   if (step === "phone") {
     return (
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-8 py-4">
-            <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 inline-flex items-center">
-              ← Zpět na hlavní stránku
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 min-h-[calc(100vh-60px)]">
+        <div className="grid md:grid-cols-2 min-h-screen">
           {/* Left side - Benefits */}
           <section className="bg-white p-8 md:p-16 flex flex-col justify-center">
+            <Link 
+              href="/" 
+              className="text-sm text-gray-600 hover:text-gray-900 inline-flex items-center mb-8 self-start"
+            >
+              ← Zpět na hlavní stránku
+            </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-balance">
               Ověření přes
               <br />
@@ -165,7 +163,7 @@ export default function RegistrationPage() {
           {/* Right side - Phone Form */}
           <section className="bg-white p-8 md:p-16 flex flex-col justify-center border-l border-gray-200">
             {!codeSent ? (
-              <form onSubmit={handlePhoneSubmit} className="space-y-6 max-w-md mx-auto w-full">
+              <form onSubmit={handlePhoneSubmit} className="space-y-6 max-w-md mx-auto w-full pt-0">
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-base font-semibold text-gray-900">
                     Telefonní číslo <span className="text-red-500">*</span>
@@ -287,17 +285,15 @@ export default function RegistrationPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-8 py-4">
-          <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 inline-flex items-center">
-            ← Zpět na hlavní stránku
-          </Link>
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 min-h-[calc(100vh-60px)]">
+      <div className="grid md:grid-cols-2 min-h-screen">
         {/* Left side - Benefits */}
         <section className="bg-white p-8 md:p-16 flex flex-col justify-center">
+          <Link 
+            href="/" 
+            className="text-sm text-gray-600 hover:text-gray-900 inline-flex items-center mb-8 self-start"
+          >
+            ← Zpět na hlavní stránku
+          </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-balance">
             Vyzkoušejte
             <br />
@@ -339,7 +335,7 @@ export default function RegistrationPage() {
 
         {/* Right side - Form */}
         <section className="bg-white p-8 md:p-16 flex flex-col justify-center border-l border-gray-200">
-          <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto w-full">
+          <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto w-full pt-0">
             <div className="space-y-2">
               <Label htmlFor="restaurantName" className="text-base font-semibold text-gray-900">
                 Název restaurace <span className="text-red-500">*</span>
