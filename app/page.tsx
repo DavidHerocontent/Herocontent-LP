@@ -88,6 +88,9 @@ function ClientImageGallery({ title, images }: { title: string; images: Array<{ 
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
   const [formData, setFormData] = useState({
     businessName: "",
     phone: "",
@@ -97,27 +100,56 @@ export default function Home() {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev: typeof formData) => ({ ...prev, [field]: value }))
+    setSubmitError(null)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSubmitError(null)
+    setSubmitSuccess(false)
     
     // Validate all required fields
     if (!formData.businessName || !formData.phone || !formData.email || !formData.businessType) {
+      setSubmitError("Prosím vyplňte všechna povinná pole")
       return
     }
     
-    // Here you can add form submission logic (e.g., API call)
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
     
-    // Close dialog and reset form
-    setIsDialogOpen(false)
-    setFormData({
-      businessName: "",
-      phone: "",
-      email: "",
-      businessType: ""
-    })
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Něco se pokazilo')
+      }
+
+      setSubmitSuccess(true)
+      
+      // Close dialog and reset form after a short delay
+      setTimeout(() => {
+        setIsDialogOpen(false)
+        setFormData({
+          businessName: "",
+          phone: "",
+          email: "",
+          businessType: ""
+        })
+        setSubmitSuccess(false)
+      }, 2000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitError(error instanceof Error ? error.message : 'Něco se pokazilo. Zkuste to prosím znovu.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -158,7 +190,7 @@ export default function Home() {
               <Link href="/login">Přihlásit se</Link>
             </Button>
             <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold" asChild>
-              <Link href="/trial">Vyzkoušet zdarma</Link>
+              <Link href="/registration">Vyzkoušet zdarma</Link>
             </Button>
           </div>
         </div>
@@ -188,7 +220,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/trial"
+                href="/registration"
                 className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
               >
                 Vyzkoušet zdarma
@@ -432,7 +464,7 @@ export default function Home() {
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
-                    href="/trial"
+                    href="/registration"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
                   >
                     Vyzkoušet zdarma
@@ -532,7 +564,7 @@ export default function Home() {
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
-                    href="/trial"
+                    href="/registration"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
                   >
                     Vyzkoušet zdarma
@@ -640,7 +672,7 @@ export default function Home() {
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
-                    href="/trial"
+                    href="/registration"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
                   >
                     Vyzkoušet zdarma
@@ -779,7 +811,7 @@ export default function Home() {
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
-                    href="/trial"
+                    href="/registration"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
                   >
                     Vyzkoušet zdarma
@@ -887,7 +919,7 @@ export default function Home() {
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
-                    href="/trial"
+                    href="/registration"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
                   >
                     Vyzkoušet zdarma
@@ -1003,7 +1035,7 @@ export default function Home() {
               </div>
 
               <Button size="lg" variant="outline" className="w-full font-semibold bg-transparent mt-auto" asChild>
-                <Link href="/trial">Vyzkoušet zdarma</Link>
+                <Link href="/registration">Vyzkoušet zdarma</Link>
               </Button>
             </CardContent>
           </Card>
@@ -1429,12 +1461,23 @@ export default function Home() {
                 </SelectContent>
               </Select>
             </div>
+            {submitError && (
+              <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
+                {submitError}
+              </div>
+            )}
+            {submitSuccess && (
+              <div className="text-sm text-green-600 bg-green-50 dark:bg-green-900/20 p-3 rounded-md">
+                ✅ Žádost byla úspěšně odeslána! Děkujeme.
+              </div>
+            )}
             <div className="pt-4">
               <Button
                 type="submit"
                 className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold"
+                disabled={isSubmitting}
               >
-                Odeslat žádost
+                {isSubmitting ? "Odesílám..." : "Odeslat žádost"}
               </Button>
             </div>
           </form>
