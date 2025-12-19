@@ -7,6 +7,10 @@ import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEffect, useState } from "react"
 
 function ClientImageGallery({ title, images }: { title: string; images: Array<{ src: string; alt: string }> }) {
@@ -83,6 +87,39 @@ function ClientImageGallery({ title, images }: { title: string; images: Array<{ 
 }
 
 export default function Home() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    businessName: "",
+    phone: "",
+    email: "",
+    businessType: ""
+  })
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev: typeof formData) => ({ ...prev, [field]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Validate all required fields
+    if (!formData.businessName || !formData.phone || !formData.email || !formData.businessType) {
+      return
+    }
+    
+    // Here you can add form submission logic (e.g., API call)
+    console.log("Form submitted:", formData)
+    
+    // Close dialog and reset form
+    setIsDialogOpen(false)
+    setFormData({
+      businessName: "",
+      phone: "",
+      email: "",
+      businessType: ""
+    })
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-[1920px] mx-auto">
@@ -1046,7 +1083,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto">
+              <Button 
+                size="lg" 
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
+                onClick={() => setIsDialogOpen(true)}
+              >
                 Mám zájem
               </Button>
             </CardContent>
@@ -1136,7 +1177,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto">
+              <Button 
+                size="lg" 
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
+                onClick={() => setIsDialogOpen(true)}
+              >
                 Mám zájem
               </Button>
             </CardContent>
@@ -1314,6 +1359,87 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Contact Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Vyplňte prosím formulář</DialogTitle>
+            <DialogDescription>
+              Spojíme se s vámi pro ukázku služby a bezstarostné zahájení spolupráce.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+            <div className="space-y-2">
+              <Label htmlFor="businessName">
+                Název podniku <span className="text-destructive">*</span>
+              </Label>
+              <Input
+                id="businessName"
+                placeholder="Název podniku"
+                value={formData.businessName}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("businessName", e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">
+                Telefonní číslo <span className="text-destructive">*</span>
+              </Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="+420 (000) 000-000"
+                value={formData.phone}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">
+                Email <span className="text-destructive">*</span>
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Váš e-mail"
+                value={formData.email}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="businessType">
+                Typ podniku <span className="text-destructive">*</span>
+              </Label>
+              <Select
+                value={formData.businessType}
+                onValueChange={(value: string) => handleInputChange("businessType", value)}
+                required
+              >
+                <SelectTrigger id="businessType" className="w-full">
+                  <SelectValue placeholder="Vyberte typ podniku" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="restaurace">Restaurace</SelectItem>
+                  <SelectItem value="kavarna">Kavárna</SelectItem>
+                  <SelectItem value="pub-bar">Pub, bar</SelectItem>
+                  <SelectItem value="rozvoz">Rozvoz</SelectItem>
+                  <SelectItem value="jine">Jiné</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="pt-4">
+              <Button
+                type="submit"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold"
+              >
+                Odeslat žádost
+              </Button>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <footer className="border-t border-border py-6">
