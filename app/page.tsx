@@ -950,16 +950,16 @@ export default function Home() {
                 title: "Přilákejte zákazníky na denní menu",
                 description:
                   "Zobrazujeme vaše denní menu lidem ve vašem okolí ve chvíli, kdy rozhodují, kde poobědvat.",
-                stat: "20% více prodaných obědů",
-                client: "Cube Eatery",
+                caseHeadline: "20% více prodaných obědů",
+                caseSubheadline: "Díky cílené reklamě na denní menu v době oběda",
                 icon: UtensilsCrossed,
                 logo: "logo_cube_eatery.jpg",
               },
               {
                 title: "Oslovte místní zákazníky akcemi",
                 description: "Zviditelňujeme vaše speciální akce, živou hudbu a speciality ve vašem okolí.",
-                stat: "Naplnění pobočky hned první den",
-                client: "Dhaba Beas",
+                caseHeadline: "Naplnění pobočky hned první den",
+                caseSubheadline: "Reklamní kampaň na speciální akci s živou hudbou",
                 icon: CalendarIcon,
                 logo: "logo_dhaba.png",
               },
@@ -967,8 +967,8 @@ export default function Home() {
                 title: "Přitáhněte turisty",
                 description:
                   "Cílíme reklamu i na turisty ve vašem okolí, kteří touží poznat místní kuchyni a atmosféru.",
-                stat: "Větší návštěvnost od turistů",
-                client: "Pivní Přístav",
+                caseHeadline: "Větší návštěvnost od turistů",
+                caseSubheadline: "Cílená reklama na turisty v okolí podniku",
                 icon: MapPin,
                 logo: "logo_pivni_privstav.png",
               },
@@ -985,17 +985,19 @@ export default function Home() {
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-4">{benefit.description}</p>
                     <div className="pt-4 border-t border-border mt-auto">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-4">
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold text-yellow-400 mb-1">{benefit.caseHeadline}</p>
+                          <p className="text-sm text-muted-foreground">{benefit.caseSubheadline}</p>
+                        </div>
                         {benefit.logo && (
                           <img 
                             src={`/logos/${benefit.logo}`} 
-                            alt={`${benefit.client} logo`}
-                            className="w-8 h-8 object-contain flex-shrink-0"
+                            alt="Restaurant logo"
+                            className="w-16 h-16 object-contain flex-shrink-0"
                           />
                         )}
-                        <p className="text-sm font-semibold text-yellow-400">{benefit.stat}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">{benefit.client}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -1462,40 +1464,35 @@ export default function Home() {
       </Dialog>
 
       {/* Footer */}
-      <footer className="border-t border-border py-6">
+      <footer className="border-t border-border py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-2">
-                <img 
-                  src="/images/HC_Logo.png" 
-                  alt="HeroContent Logo" 
-                  className="w-10 h-10 object-contain"
-                />
-                <span className="text-xl font-semibold">HeroContent</span>
-              </div>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm">
                 <Link
-                  href="#"
+                  href="/registration"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  aria-label="Facebook"
                 >
-                  <Facebook className="w-5 h-5" />
+                  Vyzkoušet zdarma
                 </Link>
                 <Link
-                  href="#"
+                  href="/login"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  aria-label="Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  Přihlásit se
                 </Link>
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-4 border-t border-border">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
-              </p>
-              <div className="flex items-center gap-6 text-sm">
+                <Link
+                  href="https://herocontent.ai/blog"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="https://herocontent.ai/kariera"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Kariéra
+                </Link>
                 <Link
                   href="https://herocontent.ai/privacy-policy"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
@@ -1509,6 +1506,31 @@ export default function Home() {
                   Obchodní podmínky
                 </Link>
               </div>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="https://www.facebook.com/herocontent.studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/herocontent.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+            <div className="pt-4 border-t border-border text-center">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
+              </p>
             </div>
           </div>
         </div>
