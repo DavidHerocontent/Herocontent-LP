@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
@@ -318,16 +318,16 @@ export default function Home() {
           <div className="flex gap-8 animate-scroll relative z-10 px-4 sm:px-6 lg:px-8">
               {/* Logo files array */}
               {[
-                "dhaba_logo_small.png",
-                "logo_small.png",
-                "logo_small (1).png",
-                "logo_small (2).png",
-                "logo_small (3).png",
-                "logo_small (4).png",
-                "logo_small (5).png",
-                "pizzamat_logo_small.png",
-                "u-dobre-myslenki-logo-small.png",
-                "WhatsApp-Image-2025-03-25-at-10.56.34-(1).png",
+                "logo_dhaba.png",
+                "logo_coal_&_fire.png",
+                "logo_ekant.png",
+                "logo_futrovna.png",
+                "logo_my_bistro_cafe.png",
+                "logo_pizzamat.png",
+                "logo_pizzburg.png",
+                "logo_udobremyslenky.png",
+                "logo_black_sheep.png",
+                "logo_placeholder.png",
               ].map((logo, i) => (
                 <div
                   key={`logo-1-${i}`}
@@ -342,16 +342,16 @@ export default function Home() {
               ))}
               {/* Duplicate set for seamless loop */}
               {[
-                "dhaba_logo_small.png",
-                "logo_small.png",
-                "logo_small (1).png",
-                "logo_small (2).png",
-                "logo_small (3).png",
-                "logo_small (4).png",
-                "logo_small (5).png",
-                "pizzamat_logo_small.png",
-                "u-dobre-myslenki-logo-small.png",
-                "WhatsApp-Image-2025-03-25-at-10.56.34-(1).png",
+                "logo_dhaba.png",
+                "logo_coal_&_fire.png",
+                "logo_ekant.png",
+                "logo_futrovna.png",
+                "logo_my_bistro_cafe.png",
+                "logo_pizzamat.png",
+                "logo_pizzburg.png",
+                "logo_udobremyslenky.png",
+                "logo_black_sheep.png",
+                "logo_placeholder.png",
               ].map((logo, i) => (
                 <div
                   key={`logo-2-${i}`}
@@ -952,12 +952,16 @@ export default function Home() {
                   "Zobrazujeme vaše denní menu lidem ve vašem okolí ve chvíli, kdy rozhodují, kde poobědvat.",
                 stat: "20% více prodaných obědů",
                 client: "Cube Eatery",
+                icon: UtensilsCrossed,
+                logo: "logo_cube_eatery.jpg",
               },
               {
                 title: "Oslovte místní zákazníky akcemi",
                 description: "Zviditelňujeme vaše speciální akce, živou hudbu a speciality ve vašem okolí.",
                 stat: "Naplnění pobočky hned první den",
                 client: "Dhaba Beas",
+                icon: CalendarIcon,
+                logo: "logo_dhaba.png",
               },
               {
                 title: "Přitáhněte turisty",
@@ -965,22 +969,38 @@ export default function Home() {
                   "Cílíme reklamu i na turisty ve vašem okolí, kteří touží poznat místní kuchyni a atmosféru.",
                 stat: "Větší návštěvnost od turistů",
                 client: "Pivní Přístav",
+                icon: MapPin,
+                logo: "logo_pivni_privstav.png",
               },
-            ].map((benefit, i) => (
-              <Card key={i} className="border-border hover:border-yellow-400 transition-colors">
-                <CardContent className="p-6 space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-yellow-400/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold">{benefit.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm font-semibold text-yellow-400">{benefit.stat}</p>
-                    <p className="text-sm text-muted-foreground">{benefit.client}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((benefit, i) => {
+              const IconComponent = benefit.icon
+              return (
+                <Card key={i} className="border-border hover:border-yellow-400 transition-colors flex flex-col">
+                  <CardContent className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="w-5 h-5 text-yellow-400" />
+                      </div>
+                      <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed mb-4">{benefit.description}</p>
+                    <div className="pt-4 border-t border-border mt-auto">
+                      <div className="flex items-center gap-2 mb-2">
+                        {benefit.logo && (
+                          <img 
+                            src={`/logos/${benefit.logo}`} 
+                            alt={`${benefit.client} logo`}
+                            className="w-8 h-8 object-contain flex-shrink-0"
+                          />
+                        )}
+                        <p className="text-sm font-semibold text-yellow-400">{benefit.stat}</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{benefit.client}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
           <div className="text-center mt-12">
             <p className="text-2xl font-semibold mb-6">
