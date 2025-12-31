@@ -368,7 +368,7 @@ export default function Home() {
       <section id="funkce" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Co pro vás děláme?</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak vám ušetříme čas a přivedeme zákazníky?</h2>
             <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
           </div>
 
@@ -631,11 +631,11 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Calendar Picture */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
-                      src="/placeholder.jpg"
+                      src="/images/feature-3-calendar.jpg"
                       alt="Kalendář příspěvků"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain object-top"
                     />
                   </div>
                 </div>
