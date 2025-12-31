@@ -882,11 +882,11 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Daily Menu Created Automatically */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-5-daily-menu.png"
                       alt="Automaticky vytvořené denní menu"
-                      className="w-full h-full object-contain object-top"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>
@@ -993,10 +993,9 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
-          <p className="text-xl text-muted-foreground">Flexibilní řešení pro každou velikost týmu</p>
-        </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
+          </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Standard Tier */}
           <Card className="border-yellow-400/50 shadow-xl relative flex flex-col">
