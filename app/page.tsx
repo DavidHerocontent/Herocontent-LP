@@ -201,14 +201,16 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-balance">
-              Spravujeme Instagram a reklamu pro v
+              Spravujeme<br />
+              Instagram a<br />
+              reklamu pro<br />
               <TypewriterText
                 phrases={[
-                  { prefix: "aši ", suffix: "Restauraci" },
-                  { prefix: "aši ", suffix: "Kavárnu" },
-                  { prefix: "áš ", suffix: "Pub" },
-                  { prefix: "áš ", suffix: "Hotel" },
-                  { prefix: "áš ", suffix: "Bar" },
+                  { prefix: "vaši ", suffix: "Restauraci" },
+                  { prefix: "vaši ", suffix: "Kavárnu" },
+                  { prefix: "váš ", suffix: "Pub" },
+                  { prefix: "váš ", suffix: "Hotel" },
+                  { prefix: "váš ", suffix: "Bar" },
                 ]}
                 typingSpeed={100}
                 deletingSpeed={80}
@@ -991,55 +993,7 @@ export default function Home() {
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
           <p className="text-xl text-muted-foreground">Flexibilní řešení pro každou velikost týmu</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Start Tier */}
-          <Card className="border-border flex flex-col">
-            <CardContent className="p-8 flex flex-col flex-1 space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold mb-2">Start</h3>
-                <div className="text-4xl font-bold mb-2">
-                  950 Kč<span className="text-lg font-normal text-muted-foreground">/měsíčně</span>
-                </div>
-              </div>
-
-              <div className="space-y-4 flex-1">
-                <div>
-                  <h4 className="font-semibold mb-3">Výstupy</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">6 vytvořených příspěvků měsíčně</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">1 reklamní kampaň měsíčně</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-3">Služby</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <Button size="lg" variant="outline" className="w-full font-semibold bg-transparent mt-auto" asChild>
-                <Link href="/registration">Vyzkoušet zdarma</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Standard Tier */}
           <Card className="border-yellow-400/50 shadow-xl relative flex flex-col">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -1118,9 +1072,9 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
-                onClick={() => setIsDialogOpen(true)}
+                asChild
               >
-                Mám zájem
+                <Link href="/registration">Vyzkoušet zdarma</Link>
               </Button>
             </CardContent>
           </Card>
