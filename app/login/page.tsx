@@ -117,7 +117,7 @@ export default function LoginPage() {
 
                 <p className="text-sm text-center text-gray-600">
                   Nemáte ještě účet?{" "}
-                  <Link href="/trial" className="text-yellow-400 hover:text-yellow-500 font-semibold underline">
+                  <Link href="/registration" className="text-yellow-400 hover:text-yellow-500 font-semibold underline">
                     Zaregistrujte se
                   </Link>
                 </p>

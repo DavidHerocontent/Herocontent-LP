@@ -1240,9 +1240,9 @@ export default function Home() {
               <ClientImageGallery
                 title="Restaurace"
                 images={[
-                  { src: "/images/restaurant-1.png", alt: "Příspěvky pro restauraci - první set" },
-                  { src: "/images/restaurant-2.png", alt: "Příspěvky pro restauraci - druhý set" },
-                  { src: "/images/restaurant-3.png", alt: "Příspěvky pro restauraci - třetí set" },
+                  { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
+                  { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
+                  { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
                 ]}
               />
             </TabsContent>
@@ -1251,8 +1251,8 @@ export default function Home() {
               <ClientImageGallery
                 title="Kavárny"
                 images={[
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - první set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - druhý set" },
+                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
+                  { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - třetí set" },
                 ]}
               />
@@ -1262,8 +1262,8 @@ export default function Home() {
               <ClientImageGallery
                 title="Hospody"
                 images={[
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - první set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - druhý set" },
+                  { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
+                  { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - třetí set" },
                 ]}
               />
@@ -1284,7 +1284,7 @@ export default function Home() {
               <ClientImageGallery
                 title="Hotely"
                 images={[
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - první set" },
+                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - druhý set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - třetí set" },
                 ]}
@@ -1319,7 +1319,7 @@ export default function Home() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/placeholder.jpg"
+                    src="/images/founder-elisey.jpg"
                     alt="Elisey"
                     className="w-full h-full object-cover"
                   />
@@ -1334,7 +1334,7 @@ export default function Home() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/placeholder.jpg"
+                    src="/images/founder-david.jpg"
                     alt="David"
                     className="w-full h-full object-cover"
                   />
@@ -1349,7 +1349,7 @@ export default function Home() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/placeholder.jpg"
+                    src="/images/founder-anton.jpg"
                     alt="Anton"
                     className="w-full h-full object-cover"
                   />
