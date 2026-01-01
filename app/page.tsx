@@ -1471,7 +1471,7 @@ export default function Home() {
                   Blog
                 </Link>
                 <Link
-                  href="https://herocontent.ai/kariera"
+                  href="/kariera"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
                 >
                   Kariéra
