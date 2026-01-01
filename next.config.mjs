@@ -6,6 +6,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure JavaScript is minified in production
+  swcMinify: true,
+  compress: true,
+  // Optimize production builds
+  productionBrowserSourceMaps: false,
 }
 
 export default nextConfig

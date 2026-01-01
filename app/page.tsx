@@ -1302,9 +1302,9 @@ export default function Home() {
       {/* Client Showcase Section */}
       <section id="klienti" className="py-10 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">Naši spokojení klienti</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">Ukázka naší práce</h2>
           <p className="text-xl text-muted-foreground text-center mb-16">
-            Přidejte se k restauracím, které již využívají HeroContent
+            Podívejte se, jak by mohly vypadat vaše sociální sítě
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
@@ -1563,81 +1563,72 @@ export default function Home() {
       <footer className="border-t border-border bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
-            {/* Column 1 - HeroContent Brand */}
-            <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground text-lg">HeroContent:</h3>
-              <div className="flex flex-col gap-3 text-sm">
-                <h4 className="font-semibold text-foreground">O společnosti</h4>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/kariera"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Kariéra
-                </Link>
-              </div>
+            {/* Column 1 */}
+            <div className="flex flex-col gap-3 text-sm">
+              <Link
+                href="/o-spolecnosti"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                O společnosti
+              </Link>
+              <Link
+                href="/blog"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/kariera"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                Kariéra
+              </Link>
             </div>
 
-            {/* Column 2 - Pro klient */}
-            <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground text-lg">Pro klient:</h3>
-              <div className="flex flex-col gap-3 text-sm">
-                <Link
-                  href="/registration"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Vyzkoušet zdarma
-                </Link>
-                <Link
-                  href="https://herocontent.ai/terms-of-service"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Obchodní podmínky
-                </Link>
-                <Link
-                  href="https://herocontent.ai/privacy-policy"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Zpracování osobních údajů
-                </Link>
-              </div>
+            {/* Column 2 */}
+            <div className="flex flex-col gap-3 text-sm">
+              <Link
+                href="/registration"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                Vyzkoušet zdarma
+              </Link>
+              <Link
+                href="https://herocontent.ai/terms-of-service"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                Obchodní podmínky
+              </Link>
+              <Link
+                href="https://herocontent.ai/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                Zpracování osobních údajů
+              </Link>
             </div>
 
             {/* Column 3 - Kontakt */}
-            <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground text-lg">Kontakt:</h3>
-              <div className="flex flex-col gap-3 text-sm">
-                <Link
-                  href="https://wa.me/420296183097"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors flex items-center gap-2"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                </Link>
-                <a
-                  href="mailto:welcome@herocontent.ai"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  welcome@herocontent.ai
-                </a>
-                <a
-                  href="tel:+420296183097"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  +420296183097
-                </a>
-              </div>
+            <div className="flex flex-col gap-3 text-sm">
+              <a
+                href="mailto:welcome@herocontent.ai"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                welcome@herocontent.ai
+              </a>
+              <a
+                href="tel:+420296183097"
+                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              >
+                +420296183097
+              </a>
             </div>
 
             {/* Column 4 - Sledujte nás */}
-            <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground text-lg">Sledujte nás</h3>
+            <div className="flex flex-col gap-3">
               <div className="flex items-center gap-4">
                 <Link
                   href="https://www.instagram.com/herocontent.ai/"
