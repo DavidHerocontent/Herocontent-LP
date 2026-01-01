@@ -18,7 +18,7 @@ const blogPosts: Record<string, BlogPost> = {
     id: "proc-restaurace-bez-socialnich-siti-ztraci-hosty",
     title: "Proč restaurace bez sociálních sítí ztrácí hosty",
     category: "Marketing",
-    date: "10. 12. 2024",
+    date: "10.12.2024",
     readingTime: "3",
     content: `<p>Mnoho restaurací stále podceňuje roli sociálních sítí. Přitom právě zde dnes zákazníci často rozhodují, kam půjdou na oběd nebo večeři. Restaurace bez aktivních sociálních sítí přichází o nové hosty každý den, aniž by si to uvědomovala.</p>
 
@@ -34,7 +34,7 @@ const blogPosts: Record<string, BlogPost> = {
     id: "jaky-obsah-restauraci-privadi-nove-hosty",
     title: "Jaký obsah restauraci přivádí nové hosty",
     category: "Tipy",
-    date: "12. 11. 2024",
+    date: "12.11.2024",
     readingTime: "3",
     content: `<p>Majitelé restaurací často tápou, co mají na sociálních sítích zveřejňovat. Přitom platí jednoduché pravidlo: čím reálnější obsah, tím lepší výsledky. Zákazníci chtějí vidět skutečné jídlo a atmosféru, ne dokonalou reklamu.</p>
 
@@ -50,7 +50,7 @@ const blogPosts: Record<string, BlogPost> = {
     id: "jak-casto-ma-restaurace-pridavat-prispevky",
     title: "Jak často má restaurace přidávat příspěvky",
     category: "Tipy",
-    date: "8. 10. 2024",
+    date: "08.10.2024",
     readingTime: "2",
     content: `<p>Jedna z nejčastějších otázek zní: kolik příspěvků je tak akorát. Odpověď je jasná – důležitější než množství je pravidelnost. Sociální sítě restaurace fungují nejlépe, když jsou aktivní dlouhodobě.</p>
 
@@ -66,7 +66,7 @@ const blogPosts: Record<string, BlogPost> = {
     id: "jak-ziskat-hosty-diky-lokalnimu-marketingu",
     title: "Jak získat hosty díky lokálnímu marketingu",
     category: "Marketing",
-    date: "10. 9. 2024",
+    date: "10.09.2024",
     readingTime: "3",
     content: `<p>Pro restaurace je klíčové oslovit lidi v okolí. Právě zde mají sociální sítě obrovskou výhodu. Lokální marketing restaurace patří mezi nejefektivnější způsoby, jak zvýšit návštěvnost.</p>
 
@@ -82,7 +82,7 @@ const blogPosts: Record<string, BlogPost> = {
     id: "jak-zvladnout-socialni-site-bez-zbytecne-prace",
     title: "Jak zvládnout sociální sítě bez zbytečné práce",
     category: "Tipy",
-    date: "13. 8. 2024",
+    date: "13.08.2024",
     readingTime: "3",
     content: `<p>Majitelé restaurací často nemají čas řešit marketing. To ale neznamená, že sociální sítě musí být stres. Stačí je zjednodušit a nastavit systém.</p>
 

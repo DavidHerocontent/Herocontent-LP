@@ -150,8 +150,63 @@ export default function Home() {
     }
   }
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HeroContent",
+    "description": "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby až o 20%.",
+    "url": "https://herocontent.ai",
+    "logo": "https://herocontent.ai/images/HC_Logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+420-296-183-097",
+      "contactType": "customer service",
+      "email": "welcome@herocontent.ai",
+      "availableLanguage": ["Czech", "Slovak"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/herocontent.studio",
+      "https://www.instagram.com/herocontent.ai/"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Czech Republic"
+    },
+    "serviceType": "Social Media Management for Restaurants"
+  }
+
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Správa sociálních sítí pro restaurace",
+    "provider": {
+      "@type": "Organization",
+      "name": "HeroContent"
+    },
+    "description": "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně",
+    "offers": {
+      "@type": "Offer",
+      "price": "2500",
+      "priceCurrency": "CZK",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "2500",
+        "priceCurrency": "CZK",
+        "unitCode": "MON"
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
       <div className="max-w-[1920px] mx-auto">
       {/* Header */}
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">

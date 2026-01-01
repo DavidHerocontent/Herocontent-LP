@@ -8,12 +8,51 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HeroContent - Zvyšte tržby své restaurace až o 20% díky správě sociálních sítí",
-  description:
-    "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby až o 20%.",
-  generator: "v0.app",
+  title: "HeroContent - Správa sociálních sítí pro resturace",
+  description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+  keywords: [
+    "Instagram",
+    "Facebook",
+    "Sociální sítě",
+    "Restaurace",
+    "Reklama",
+  ],
+  authors: [{ name: "HeroContent" }],
+  creator: "HeroContent",
+  publisher: "HeroContent",
+  metadataBase: new URL("https://herocontent.ai"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "cs_CZ",
+    url: "https://herocontent.ai",
+    siteName: "HeroContent",
+    title: "HeroContent - Správa sociálních sítí pro resturace",
+    description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+    images: [
+      {
+        url: "/images/HC_Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "HeroContent - Správa sociálních sítí pro restaurace",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HeroContent - Správa sociálních sítí pro resturace",
+    description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+    images: ["/images/HC_Logo.png"],
+    creator: "@herocontent",
+  },
   icons: {
     icon: [
+      {
+        url: "/images/Favicon.png",
+        type: "image/png",
+      },
       {
         url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
@@ -27,7 +66,18 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/images/Favicon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 
