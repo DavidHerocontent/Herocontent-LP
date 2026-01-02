@@ -2,12 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -52,15 +53,16 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
           </CarouselContent>
         </Carousel>
         {/* Carousel Indicators */}
-        <div className="flex justify-center items-center gap-2 mt-4">
+        <div className="flex justify-center items-center gap-3 mt-4">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              className={`h-2 rounded-full transition-all ${
-                index + 1 === current ? "w-8 bg-yellow-400" : "w-2 bg-muted-foreground/30"
+              className={`h-2.5 rounded-full transition-all touch-manipulation ${
+                index + 1 === current ? "w-8 bg-yellow-400" : "w-2.5 bg-muted-foreground/30"
               }`}
               onClick={() => api?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
+              style={{ minWidth: '10px', minHeight: '10px' }}
             />
           ))}
           <span className="ml-2 text-sm text-muted-foreground">
@@ -88,6 +90,7 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
 
 export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
@@ -268,7 +271,64 @@ export default function Home() {
               O nás
             </Link>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Mobile Menu */}
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon" className="w-10 h-10">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Otevřít menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-4 mt-8">
+                  <Link 
+                    href="#funkce" 
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Služby
+                  </Link>
+                  <Link 
+                    href="#cenik" 
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Cenník
+                  </Link>
+                  <Link 
+                    href="#klienti" 
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Ukázka
+                  </Link>
+                  <Link 
+                    href="#o-nas" 
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    O nás
+                  </Link>
+                  <div className="pt-4 border-t">
+                    <Link 
+                      href="/login" 
+                      className="block text-lg font-medium hover:text-yellow-400 transition-colors mb-4"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Přihlásit se
+                    </Link>
+                    <Link 
+                      href="/registration" 
+                      className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg transition-colors w-full"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Vyzkoušet zdarma
+                    </Link>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
             <a 
               href="https://wa.me/420608570962" 
               target="_blank" 
