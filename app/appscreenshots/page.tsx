@@ -27,9 +27,9 @@ export default function AppScreenshotsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Feature 1: Photo Editing */}
-          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+          <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+            <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -49,7 +49,7 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+            <div className="flex-[0.3] flex flex-col min-h-[150px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
                   <svg
@@ -77,9 +77,9 @@ export default function AppScreenshotsPage() {
           </div>
 
           {/* Feature 2: Posts with Text */}
-          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+          <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+            <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
               <div className="w-full h-full grid grid-cols-3 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -113,7 +113,7 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+            <div className="flex-[0.3] flex flex-col min-h-[150px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
                   <svg
@@ -141,9 +141,9 @@ export default function AppScreenshotsPage() {
           </div>
 
           {/* Feature 3: Monthly Content */}
-          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+          <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+            <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -182,7 +182,7 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+            <div className="flex-[0.3] flex flex-col min-h-[150px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
                   <svg
@@ -210,9 +210,9 @@ export default function AppScreenshotsPage() {
           </div>
 
           {/* Feature 4: Advertising */}
-          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+          <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+            <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -279,7 +279,7 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+            <div className="flex-[0.3] flex flex-col min-h-[150px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
                   <svg
@@ -307,9 +307,9 @@ export default function AppScreenshotsPage() {
           </div>
 
           {/* Feature 5: Daily Menu */}
-          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+          <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+            <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -348,7 +348,7 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+            <div className="flex-[0.3] flex flex-col min-h-[150px]">
               <div className="flex items-center gap-3 mb-2">
                 <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
                   <svg
