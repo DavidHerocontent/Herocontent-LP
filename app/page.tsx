@@ -906,7 +906,6 @@ export default function Home() {
                             <div className="flex flex-col items-start max-w-[75%]">
                               <div className="bg-white rounded-lg px-3 py-2 shadow-sm">
                                 <p className="text-xs text-gray-800 m-0">
-                                  Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum<br />
                                   Text: Tématika akce, doba trvání a více detailů<br />
                                   Cílení: Okruh 1km od vašeho podniku<br />
                                   Rozpočet: 500 Kč<br />

@@ -27,8 +27,9 @@ export default function AppScreenshotsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Feature 1: Photo Editing */}
-          <div className="flex flex-col h-[600px]">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
+          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+            <div className="flex flex-col h-full">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -72,11 +73,13 @@ export default function AppScreenshotsPage() {
                 Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala.
               </p>
             </div>
+            </div>
           </div>
 
           {/* Feature 2: Posts with Text */}
-          <div className="flex flex-col h-[600px]">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
+          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+            <div className="flex flex-col h-full">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
               <div className="w-full h-full grid grid-cols-3 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -134,11 +137,13 @@ export default function AppScreenshotsPage() {
                 Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
               </p>
             </div>
+            </div>
           </div>
 
           {/* Feature 3: Monthly Content */}
-          <div className="flex flex-col h-[600px]">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
+          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+            <div className="flex flex-col h-full">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -201,11 +206,13 @@ export default function AppScreenshotsPage() {
                 Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
               </p>
             </div>
+            </div>
           </div>
 
           {/* Feature 4: Advertising */}
-          <div className="flex flex-col h-[600px]">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
+          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+            <div className="flex flex-col h-full">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -226,7 +233,6 @@ export default function AppScreenshotsPage() {
                           <div className="flex flex-col items-start max-w-[75%]">
                             <div className="bg-white rounded-lg px-2 py-1.5 shadow-sm">
                               <p className="text-[10px] text-gray-800 m-0">
-                                Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum<br />
                                 Text: Tématika akce, doba trvání a více detailů<br />
                                 Cílení: Okruh 1km od vašeho podniku<br />
                                 Rozpočet: 500 Kč<br />
@@ -297,11 +303,13 @@ export default function AppScreenshotsPage() {
                 Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy.
               </p>
             </div>
+            </div>
           </div>
 
           {/* Feature 5: Daily Menu */}
-          <div className="flex flex-col h-[600px]">
-            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
+          <div className="aspect-[4/5] border border-border rounded-lg p-4">
+            <div className="flex flex-col h-full">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -363,6 +371,7 @@ export default function AppScreenshotsPage() {
               <p className="text-sm text-muted-foreground">
                 Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
               </p>
+            </div>
             </div>
           </div>
         </div>
