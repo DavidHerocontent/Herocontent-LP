@@ -1,28 +1,11 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-
 export default function AppScreenshotsPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-yellow-400 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Zpět na hlavní stránku
-          </Link>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Ukázky aplikace</h1>
-          <p className="text-xl text-muted-foreground">Podívejte se, jak vypadají naše funkce v praxi</p>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl lg:text-5xl font-bold">Podívejte se jak Herocontent funguje</h1>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
