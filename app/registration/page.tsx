@@ -296,35 +296,17 @@ export default function RegistrationPage() {
           </h1>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0 mt-1">
-                <Check className="w-4 h-4 text-black" />
-              </div>
-              <p className="text-gray-700 leading-relaxed">Získáme základní přehled o vašem podniku, nabídce a stylu komunikace.</p>
-            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Na základě odkazů na váš web, Google Maps a sociální sítě lépe pochopíme váš podnik, nabídku i styl komunikace.
+            </p>
 
-            <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0 mt-1">
-                <Check className="w-4 h-4 text-black" />
-              </div>
-              <p className="text-gray-700 leading-relaxed">Připravíme se na hovor tak, abychom neřešili obecné věci, ale šli rovnou k věci.</p>
-            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Čím více zdrojů a fotografií od vás budeme mít, tím přesnější a kvalitnější ukázky obsahu vám dokážeme připravit.
+            </p>
 
-            <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0 mt-1">
-                <Check className="w-4 h-4 text-black" />
-              </div>
-              <p className="text-gray-700 leading-relaxed">Přizpůsobíme HeroContent vašemu typu restaurace a cílovým hostům.</p>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0 mt-1">
-                <Check className="w-4 h-4 text-black" />
-              </div>
-              <p className="text-gray-700 leading-relaxed">
-                Vygenerujeme pro vás konkrétní ukázku obsahu na míru vašemu podniku.
-              </p>
-            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Z těchto podkladů vám následně zdarma připravíme ukázku obsahu, konkrétně 12 příspěvků vytvořených na míru vašemu podniku.
+            </p>
           </div>
         </section>
 
