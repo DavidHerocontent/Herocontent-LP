@@ -1032,7 +1032,7 @@ export default function Home() {
                           <div className="flex items-start gap-2 w-full justify-end">
                             <div className="flex flex-col items-end max-w-[75%]">
                               <div className="bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
-                                <p className="text-xs text-gray-800 m-0">Dnes máme na jídelníčku: Hovězí s brambory za 189, Špagety carbonara 179 Kč, burger za 179.</p>
+                                <p className="text-xs text-gray-800 m-0">Dnes máme na jídelníčku: Kuřecí vývar s celestýnskými nudlemi, Čevabčiči, brambory, hořčice 175 Kč, Kuřecí asijská směs, nudle 169 Kč, BBQ trhané maso se sýrem a hranolkami 175 Kč</p>
                               </div>
                               <span className="text-[9px] text-gray-500 mt-0.5">12:34</span>
                             </div>
