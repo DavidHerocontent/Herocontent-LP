@@ -288,8 +288,11 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-2 md:gap-3">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6" asChild>
-              <Link href="/registration">Vyzkoušet zdarma</Link>
+            <Button 
+              className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6"
+              onClick={() => setIsDialogOpen(true)}
+            >
+              Vyzkoušet zdarma
             </Button>
             {/* Mobile Menu - top right */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -330,13 +333,15 @@ export default function Home() {
                     O nás
                   </Link>
                   <div className="pt-3 border-t mt-2">
-                    <Link 
-                      href="/registration" 
-                      className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg transition-colors w-full"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                    <Button
+                      onClick={() => {
+                        setIsDialogOpen(true)
+                        setIsMobileMenuOpen(false)
+                      }}
+                      className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg"
                     >
                       Vyzkoušet zdarma
-                    </Link>
+                    </Button>
                   </div>
                 </nav>
               </SheetContent>
@@ -600,12 +605,12 @@ export default function Home() {
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
                   >
                     Vyzkoušet zdarma
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -703,12 +708,12 @@ export default function Home() {
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
                   >
                     Vyzkoušet zdarma
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -812,12 +817,12 @@ export default function Home() {
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
                   >
                     Vyzkoušet zdarma
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -951,12 +956,12 @@ export default function Home() {
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
                   >
                     Vyzkoušet zdarma
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -1060,12 +1065,12 @@ export default function Home() {
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 flex-shrink-0 mt-auto">
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
                   >
                     Vyzkoušet zdarma
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -1234,9 +1239,9 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
-                asChild
+                onClick={() => setIsDialogOpen(true)}
               >
-                <Link href="/registration">Vyzkoušet zdarma</Link>
+                Vyzkoušet zdarma
               </Button>
             </CardContent>
           </Card>
@@ -1328,9 +1333,9 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
-                asChild
+                onClick={() => setIsDialogOpen(true)}
               >
-                <Link href="/registration">Vyzkoušet zdarma</Link>
+                Vyzkoušet zdarma
               </Button>
             </CardContent>
           </Card>
@@ -1631,12 +1636,12 @@ export default function Home() {
 
             {/* Column 2 */}
             <div className="flex flex-col gap-3 text-sm">
-              <Link
-                href="/registration"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="text-muted-foreground hover:text-yellow-400 transition-colors text-left"
               >
                 Vyzkoušet zdarma
-              </Link>
+              </button>
               <Link
                 href="https://herocontent.ai/terms-of-service"
                 target="_blank"
