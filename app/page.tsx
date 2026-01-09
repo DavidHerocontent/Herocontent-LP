@@ -288,7 +288,22 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Mobile Menu */}
+            <a 
+              href="https://wa.me/420608570962" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Kontaktovat nás na WhatsApp"
+              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white transition-colors border-2 border-[#25D366] flex-shrink-0"
+            >
+              <MessageCircle className="h-5 w-5" />
+            </a>
+            <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
+              <Link href="/login">Přihlásit se</Link>
+            </Button>
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold hidden md:inline-flex" asChild>
+              <Link href="/registration">Vyzkoušet zdarma</Link>
+            </Button>
+            {/* Mobile Menu - top right */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon" className="w-10 h-10">
@@ -296,40 +311,40 @@ export default function Home() {
                   <span className="sr-only">Otevřít menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4 mt-8">
+              <SheetContent side="top" className="h-auto w-full p-4 pb-6">
+                <nav className="flex flex-col gap-3">
                   <Link 
                     href="#funkce" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Služby
                   </Link>
                   <Link 
                     href="#cenik" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Cenník
                   </Link>
                   <Link 
                     href="#klienti" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Ukázka
                   </Link>
                   <Link 
                     href="#o-nas" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors"
+                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     O nás
                   </Link>
-                  <div className="pt-4 border-t">
+                  <div className="pt-3 border-t mt-2">
                     <Link 
                       href="/login" 
-                      className="block text-lg font-medium hover:text-yellow-400 transition-colors mb-4"
+                      className="block text-lg font-medium hover:text-yellow-400 transition-colors mb-3 py-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Přihlásit se
@@ -345,21 +360,6 @@ export default function Home() {
                 </nav>
               </SheetContent>
             </Sheet>
-            <a 
-              href="https://wa.me/420608570962" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Kontaktovat nás na WhatsApp"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white transition-colors border-2 border-[#25D366] flex-shrink-0"
-            >
-              <MessageCircle className="h-5 w-5" />
-            </a>
-            <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
-              <Link href="/login">Přihlásit se</Link>
-            </Button>
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold" asChild>
-              <Link href="/registration">Vyzkoušet zdarma</Link>
-            </Button>
           </div>
         </div>
       </header>
