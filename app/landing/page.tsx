@@ -393,19 +393,31 @@ export default function Home() {
                 </div>
                 {/* Desktop: Two images side by side with frame wrapping both */}
                 <div className="hidden lg:grid lg:grid-cols-2 lg:gap-0 h-full rounded-lg overflow-hidden border border-border bg-background">
-                  <div className="h-full w-full flex items-center justify-center p-2">
+                  <div className="h-full w-full flex items-center justify-center p-3 overflow-hidden relative">
                     <img
                       src="/images/Grid.webp"
                       alt="Ukázka 12 příspěvků pro sociální sítě"
-                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                      className="object-contain"
+                      style={{ 
+                        maxHeight: 'calc(100% - 1.5rem)',
+                        maxWidth: 'calc(100% - 1.5rem)',
+                        width: 'auto',
+                        height: 'auto'
+                      }}
                       loading="lazy"
                     />
                   </div>
-                  <div className="h-full w-full border-l border-border flex items-center justify-center p-2">
+                  <div className="h-full w-full border-l border-border flex items-center justify-center p-3 overflow-hidden relative">
                     <img
                       src="/images/Story showcase.jpg"
                       alt="Ukázka příspěvků na Stories"
-                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                      className="object-contain"
+                      style={{ 
+                        maxHeight: 'calc(100% - 1.5rem)',
+                        maxWidth: 'calc(100% - 1.5rem)',
+                        width: 'auto',
+                        height: 'auto'
+                      }}
                       loading="lazy"
                     />
                   </div>
