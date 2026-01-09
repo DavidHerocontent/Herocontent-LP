@@ -1383,7 +1383,7 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-4 h-auto p-1">
+            <TabsList className="flex flex-col md:grid md:grid-cols-6 w-full gap-2 mb-4 h-auto p-1">
               <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
                 <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Restaurace</span>

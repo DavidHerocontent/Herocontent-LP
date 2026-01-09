@@ -379,10 +379,10 @@ export default function Home() {
           
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
-            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 flex flex-col gap-3 lg:gap-3">
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 flex flex-col gap-3 lg:gap-3 lg:scale-110">
               {/* Images Container - Single combined image for both mobile and desktop */}
               <div className="min-h-[300px] sm:min-h-[400px] lg:min-h-0 order-2 lg:order-1">
-                <div className="w-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-0 lg:w-fit lg:mx-auto lg:scale-110">
+                <div className="w-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-0 lg:w-fit lg:mx-auto">
                   <img
                     src="/images/story-showcase-combined.jpg"
                     alt="Ukázka 12 příspěvků pro sociální sítě"
@@ -1331,7 +1331,7 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-4 h-auto p-1">
+            <TabsList className="flex flex-col md:grid md:grid-cols-6 w-full gap-2 mb-4 h-auto p-1">
               <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
                 <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Restaurace</span>
