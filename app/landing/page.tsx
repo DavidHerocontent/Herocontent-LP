@@ -382,27 +382,27 @@ export default function Home() {
           
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
-            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6">
-              <div className="text-center mb-4">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-6 h-[280px] sm:h-[320px] lg:h-[380px] flex flex-col">
+              <div className="text-center mb-2 sm:mb-3 flex-shrink-0">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2">
                   Získejte zdarma 12 příspěvků pro vaše sítě
                 </h2>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3">
                   Získejte ukázku obsahu na míru vašemu podniku zdarma
                 </p>
               </div>
-              <div className="mb-4 rounded-lg overflow-hidden border border-border">
+              <div className="flex-1 rounded-lg overflow-hidden border border-border mb-2 sm:mb-3 min-h-0">
                 <img
                   src="/images/Grid.webp"
                   alt="Ukázka 12 příspěvků pro sociální sítě"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <div className="text-center">
+              <div className="text-center flex-shrink-0">
                 <Button
                   onClick={() => setIsDialogOpen(true)}
-                  className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 h-11"
+                  className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-4 sm:px-6 h-9 sm:h-10 lg:h-11 text-sm sm:text-base"
                 >
                   Získat zdarma
                 </Button>
