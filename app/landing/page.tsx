@@ -374,8 +374,8 @@ export default function Home() {
           
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
-            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6 lg:p-6 lg:h-[380px] flex flex-col gap-3 lg:gap-2">
-              {/* Images Container - Mobile: single image, Desktop: two images side by side */}
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 lg:h-[380px] flex flex-col gap-3 lg:gap-3">
+              {/* Images Container - Mobile: single image, Desktop: two images side by side with frame */}
               <div className="min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
                 {/* Mobile: Single Grid image */}
                 <div className="lg:hidden w-full h-full rounded-lg overflow-hidden border border-border">
@@ -386,9 +386,9 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                {/* Desktop: Two images side by side with equal height */}
-                <div className="hidden lg:grid lg:grid-cols-2 lg:gap-3 h-full">
-                  <div className="rounded-lg overflow-hidden border border-border bg-background">
+                {/* Desktop: Two images side by side with frame wrapping both */}
+                <div className="hidden lg:grid lg:grid-cols-2 lg:gap-0 h-full rounded-lg overflow-hidden border border-border bg-background">
+                  <div className="h-full flex items-center justify-center">
                     <img
                       src="/images/Grid.webp"
                       alt="Ukázka 12 příspěvků pro sociální sítě"
@@ -396,7 +396,7 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border border-border bg-background">
+                  <div className="h-full border-l border-border flex items-center justify-center">
                     <img
                       src="/images/Story showcase.jpg"
                       alt="Ukázka příspěvků na Stories"
@@ -406,23 +406,25 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* Text - Mobile: above image, Desktop: below image */}
-              <div className="text-center flex-shrink-0 order-1 lg:order-2">
-                <h2 className="text-2xl sm:text-3xl lg:text-xl font-bold mb-2 lg:mb-1">
-                  12 příspěvků zdarma pro vaše sítě
-                </h2>
-                <p className="text-sm sm:text-base lg:text-sm text-muted-foreground">
-                  Získejte ukázku obsahu na míru vašemu podniku
-                </p>
-              </div>
-              {/* CTA Button - Bottom */}
-              <div className="text-center flex-shrink-0 order-3">
-                <Button
-                  onClick={() => setIsDialogOpen(true)}
-                  className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 sm:px-8 h-11 sm:h-12 lg:h-11 text-base sm:text-lg lg:text-base"
-                >
-                  Získat zdarma
-                </Button>
+              {/* Text and CTA - Mobile: stacked, Desktop: inline */}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-4 flex-shrink-0 order-1 lg:order-2">
+                <div className="text-center lg:text-left">
+                  <h2 className="text-2xl sm:text-3xl lg:text-xl font-bold mb-2 lg:mb-1">
+                    12 příspěvků zdarma pro vaše sítě
+                  </h2>
+                  <p className="text-sm sm:text-base lg:text-sm text-muted-foreground">
+                    Získejte ukázku obsahu na míru vašemu podniku
+                  </p>
+                </div>
+                {/* CTA Button - Right side on desktop */}
+                <div className="flex justify-center lg:justify-end flex-shrink-0">
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 sm:px-8 h-11 sm:h-12 lg:h-10 lg:px-6 text-base sm:text-lg lg:text-sm"
+                  >
+                    Získat zdarma
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
