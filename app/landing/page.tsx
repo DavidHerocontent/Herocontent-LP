@@ -110,6 +110,48 @@ export default function Home() {
     email: "",
     businessType: ""
   })
+  const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
+  
+  // Client Showcase tabs data
+  const showcaseTabs = [
+    { id: "restaurace", label: "Restaurace", icon: Utensils, images: [
+      { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
+      { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
+      { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
+      { src: "/images/client-showcase-restaurant-4.jpg", alt: "Příspěvky pro restauraci - čtvrtý set" },
+    ]},
+    { id: "kavarna", label: "Kavárny", icon: Coffee, images: [
+      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
+      { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
+      { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
+      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
+    ]},
+    { id: "pub", label: "Hospody", icon: Beer, images: [
+      { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
+      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
+      { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
+      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
+    ]},
+    { id: "bar", label: "Bary", icon: Wine, images: [
+      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
+      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
+      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - třetí set" },
+      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
+    ]},
+    { id: "hotel", label: "Hotely", icon: Building, images: [
+      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
+      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
+      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
+      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
+    ]},
+    { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
+      { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+      { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+      { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+      { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
+    ]},
+  ];
+  const activeShowcaseTabData = showcaseTabs.find(tab => tab.id === activeShowcaseTab);
 
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
@@ -1338,103 +1380,38 @@ export default function Home() {
             Podívejte se, jak by mohly vypadat vaše sociální sítě
           </p>
 
-          <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList 
-              className="!grid !w-full grid-cols-3 md:grid-cols-6 gap-2 mb-6 md:mb-4 !h-auto !p-1"
-              style={{ display: 'grid', width: '100%', height: 'auto', padding: '0.25rem' }}
-            >
-              <TabsTrigger value="restaurace" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Utensils className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Restaurace</span>
-              </TabsTrigger>
-              <TabsTrigger value="kavarna" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Coffee className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Kavárny</span>
-              </TabsTrigger>
-              <TabsTrigger value="pub" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Beer className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Hospody</span>
-              </TabsTrigger>
-              <TabsTrigger value="bar" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Wine className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Bary</span>
-              </TabsTrigger>
-              <TabsTrigger value="hotel" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Building className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Hotely</span>
-              </TabsTrigger>
-              <TabsTrigger value="rozvoz" className="text-xs md:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Truck className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>Rozvoz</span>
-              </TabsTrigger>
-            </TabsList>
+          {/* Client Showcase Tabs - Rebuilt from scratch with custom state */}
+          {/* Tab Navigation - Clean grid layout (2 rows on mobile, 1 row on desktop) */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6 md:mb-4 w-full">
+            {showcaseTabs.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeShowcaseTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveShowcaseTab(tab.id)}
+                  className={`
+                    flex items-center justify-center gap-1.5
+                    px-2 py-2 rounded-md
+                    text-xs md:text-sm font-medium
+                    transition-colors
+                    ${isActive 
+                      ? 'bg-yellow-400 text-black' 
+                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    }
+                  `}
+                >
+                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
 
-            <TabsContent value="restaurace" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
-                  { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
-                  { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
-                  { src: "/images/client-showcase-restaurant-4.jpg", alt: "Příspěvky pro restauraci - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-
-            <TabsContent value="kavarna" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
-                  { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
-                  { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
-                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-
-            <TabsContent value="pub" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
-                  { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
-                  { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-                  { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-
-            <TabsContent value="bar" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
-                  { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
-                  { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - třetí set" },
-                  { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-
-            <TabsContent value="hotel" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
-                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
-                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
-                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-
-            <TabsContent value="rozvoz" className="mt-0 relative z-0">
-              <ClientImageGallery
-                images={[
-                  { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-                  { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
-                  { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
-                  { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
-                ]}
-              />
-            </TabsContent>
-          </Tabs>
+          {/* Tab Content */}
+          {activeShowcaseTabData && (
+            <ClientImageGallery images={activeShowcaseTabData.images} />
+          )}
         </div>
       </section>
 
