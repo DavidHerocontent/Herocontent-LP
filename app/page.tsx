@@ -82,16 +82,16 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
       {/* Desktop Grid */}
       <div className="hidden md:flex md:justify-center">
         <div className="grid grid-cols-4 gap-4 max-w-fit">
-          {images.map((image, index) => (
+        {images.map((image, index) => (
             <div key={index} className="w-[280px]">
-              <img
-                src={image.src}
-                alt={image.alt}
+            <img
+              src={image.src}
+              alt={image.alt}
                 loading="lazy"
                 className="w-full h-auto object-contain rounded-lg border border-border"
-              />
-            </div>
-          ))}
+            />
+          </div>
+        ))}
         </div>
       </div>
     </div>
@@ -1153,8 +1153,8 @@ export default function Home() {
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0">
                         <IconComponent className="w-5 h-5 text-yellow-400" />
-                      </div>
-                      <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                  </div>
+                  <h3 className="text-xl font-semibold">{benefit.title}</h3>
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-4">{benefit.description}</p>
                     <div className="pt-4 border-t border-border mt-auto">
@@ -1172,9 +1172,9 @@ export default function Home() {
                           />
                         )}
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </CardContent>
+              </Card>
               )
             })}
           </div>
@@ -1189,9 +1189,9 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
+        </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Standard Tier */}
           <Card className="border-yellow-400/50 shadow-xl relative flex flex-col">
@@ -1383,7 +1383,7 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="flex flex-col md:grid md:grid-cols-6 w-full gap-2 mb-4 h-auto p-1">
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-4 h-auto p-1">
               <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
                 <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Restaurace</span>
@@ -1569,7 +1569,7 @@ export default function Home() {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("businessName", e.target.value)}
                 required
               />
-            </div>
+              </div>
             <div className="space-y-2">
               <Label htmlFor="phone">
                 Telefonní číslo <span className="text-destructive">*</span>
@@ -1646,15 +1646,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
             {/* Column 1 */}
             <div className="flex flex-col gap-3 text-sm">
-              <Link
+                <Link
                 href="/o-spolecnosti"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
                 O společnosti
-              </Link>
-              <Link
+                </Link>
+                <Link
                 href="/blog"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
               >
                 Blog
               </Link>
@@ -1663,25 +1663,25 @@ export default function Home() {
                 className="text-muted-foreground hover:text-yellow-400 transition-colors"
               >
                 Kariéra
-              </Link>
-            </div>
+                </Link>
+              </div>
 
             {/* Column 2 */}
             <div className="flex flex-col gap-3 text-sm">
-              <Link
+                <Link
                 href="/registration"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
                 Vyzkoušet zdarma
-              </Link>
-              <Link
-                href="https://herocontent.ai/terms-of-service"
+                </Link>
+                <Link
+                  href="https://herocontent.ai/terms-of-service"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
-                Obchodní podmínky
-              </Link>
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Obchodní podmínky
+                </Link>
               <Link
                 href="https://herocontent.ai/privacy-policy"
                 target="_blank"
@@ -1690,7 +1690,7 @@ export default function Home() {
               >
                 Zpracování osobních údajů
               </Link>
-            </div>
+              </div>
 
             {/* Column 3 - Kontakt */}
             <div className="flex flex-col gap-3 text-sm">
