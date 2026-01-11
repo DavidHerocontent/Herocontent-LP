@@ -1383,29 +1383,57 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="!grid !w-full grid-cols-3 md:grid-cols-6 gap-2 mb-6 md:mb-4 !h-auto p-1 relative z-10">
-              <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            {/* Mobile: Custom grid layout, Desktop: Use TabsList */}
+            <div className="md:hidden grid grid-cols-3 gap-2 mb-6 w-full">
+              <TabsTrigger value="restaurace" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Utensils className="w-3.5 h-3.5" />
                 <span>Restaurace</span>
               </TabsTrigger>
-              <TabsTrigger value="kavarna" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Coffee className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <TabsTrigger value="kavarna" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Coffee className="w-3.5 h-3.5" />
                 <span>Kavárny</span>
               </TabsTrigger>
-              <TabsTrigger value="pub" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Beer className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <TabsTrigger value="pub" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Beer className="w-3.5 h-3.5" />
                 <span>Hospody</span>
               </TabsTrigger>
-              <TabsTrigger value="bar" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Wine className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <TabsTrigger value="bar" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Wine className="w-3.5 h-3.5" />
                 <span>Bary</span>
               </TabsTrigger>
-              <TabsTrigger value="hotel" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Building className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <TabsTrigger value="hotel" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Building className="w-3.5 h-3.5" />
                 <span>Hotely</span>
               </TabsTrigger>
-              <TabsTrigger value="rozvoz" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
-                <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <TabsTrigger value="rozvoz" className="text-xs data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5 h-10 px-2">
+                <Truck className="w-3.5 h-3.5" />
+                <span>Rozvoz</span>
+              </TabsTrigger>
+            </div>
+            {/* Desktop: Use TabsList */}
+            <TabsList className="hidden md:grid md:grid-cols-6 w-full gap-2 mb-4 h-auto p-1">
+              <TabsTrigger value="restaurace" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Utensils className="w-4 h-4" />
+                <span>Restaurace</span>
+              </TabsTrigger>
+              <TabsTrigger value="kavarna" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Coffee className="w-4 h-4" />
+                <span>Kavárny</span>
+              </TabsTrigger>
+              <TabsTrigger value="pub" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Beer className="w-4 h-4" />
+                <span>Hospody</span>
+              </TabsTrigger>
+              <TabsTrigger value="bar" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Wine className="w-4 h-4" />
+                <span>Bary</span>
+              </TabsTrigger>
+              <TabsTrigger value="hotel" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Building className="w-4 h-4" />
+                <span>Hotely</span>
+              </TabsTrigger>
+              <TabsTrigger value="rozvoz" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Truck className="w-4 h-4" />
                 <span>Rozvoz</span>
               </TabsTrigger>
             </TabsList>
