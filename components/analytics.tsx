@@ -2,22 +2,33 @@
 
 import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export function GoogleAnalytics() {
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
+  // Only track on client side after mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   useEffect(() => {
     // Track page views for Google Analytics
-    if (typeof window !== 'undefined' && window.gtag && gaMeasurementId) {
-      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
-      window.gtag('config', gaMeasurementId, {
-        page_path: url,
-      })
+    if (mounted && typeof window !== 'undefined' && window.gtag && gaMeasurementId) {
+      try {
+        const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
+        window.gtag('config', gaMeasurementId, {
+          page_path: url,
+        })
+      } catch (error) {
+        // Silently fail if there's an error during tracking
+        console.error('GA4 tracking error:', error)
+      }
     }
-  }, [pathname, searchParams, gaMeasurementId])
+  }, [mounted, pathname, searchParams, gaMeasurementId])
 
   if (!gaMeasurementId) {
     return null
