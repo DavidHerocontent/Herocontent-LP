@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEffect, useState } from "react"
 
@@ -31,6 +32,14 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
+
+  // Reset carousel to first slide when images change (tab change on mobile)
+  useEffect(() => {
+    if (api) {
+      api.scrollTo(0, true) // Scroll to first slide immediately
+      setCurrent(1)
+    }
+  }, [images, api])
 
   return (
     <div>
@@ -82,14 +91,18 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
       {/* Desktop Grid */}
       <div className="hidden md:flex md:justify-center">
         <div className="grid grid-cols-4 gap-4 max-w-fit">
-          {images.map((image, index) => (
+          {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className="w-[280px]">
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                className="w-full h-auto object-contain rounded-lg border border-border"
-              />
+              {images[index] ? (
+                <img
+                  src={images[index].src}
+                  alt={images[index].alt}
+                  loading="lazy"
+                  className="w-full h-auto object-contain rounded-lg border border-border"
+                />
+              ) : (
+                <div className="w-full h-auto rounded-lg border border-border bg-muted/30" style={{ aspectRatio: '1/1' }} />
+              )}
             </div>
           ))}
         </div>
@@ -109,6 +122,7 @@ export default function Home() {
     phone: "",
     email: ""
   })
+  const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false)
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
   
   // Client Showcase tabs data
@@ -123,25 +137,24 @@ export default function Home() {
       { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
       { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
       { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
-      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/client-showcase-cafe-4.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/client-showcase-cafe-5.jpg", alt: "Příspěvky pro kavárny - pátý set" },
     ]},
     { id: "pub", label: "Hospody", icon: Beer, images: [
       { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
       { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
       { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
+      { src: "/images/client-showcase-pub-4.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
     ]},
     { id: "bar", label: "Bary", icon: Wine, images: [
       { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
       { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
-      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - třetí set" },
-      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
+      { src: "/images/client-showcase-bar-3.jpg", alt: "Příspěvky pro bary - třetí set" },
     ]},
     { id: "hotel", label: "Hotely", icon: Building, images: [
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
+      { src: "/images/client-showcase-hotel-2.jpg", alt: "Příspěvky pro hotely - druhý set" },
+      { src: "/images/client-showcase-hotel-3.jpg", alt: "Příspěvky pro hotely - třetí set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
       { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
@@ -151,6 +164,18 @@ export default function Home() {
     ]},
   ];
   const activeShowcaseTabData = showcaseTabs.find(tab => tab.id === activeShowcaseTab);
+
+  // Scroll to top on page load/refresh (prevents auto-scroll to hash sections)
+  useEffect(() => {
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0)
+      // Clear hash from URL if present to prevent scroll restoration
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search)
+      }
+    })
+  }, [])
 
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
@@ -162,12 +187,18 @@ export default function Home() {
       "/images/client-showcase-cafe-1.jpg",
       "/images/client-showcase-cafe-2.jpg",
       "/images/client-showcase-cafe-3.jpg",
+      "/images/client-showcase-cafe-4.jpg",
+      "/images/client-showcase-cafe-5.jpg",
       "/images/client-showcase-bar-1.jpg",
       "/images/client-showcase-bar-2.jpg",
+      "/images/client-showcase-bar-3.jpg",
       "/images/client-showcase-pub-1.jpg",
       "/images/client-showcase-pub-2.jpg",
       "/images/client-showcase-pub-3.jpg",
+      "/images/client-showcase-pub-4.jpg",
       "/images/client-showcase-hotel-1.jpg",
+      "/images/client-showcase-hotel-2.jpg",
+      "/images/client-showcase-hotel-3.jpg",
       "/images/client-showcase-delivery-1.jpeg",
       "/images/client-showcase-delivery-2.jpg",
       "/images/client-showcase-delivery-3.jpg",
@@ -202,8 +233,8 @@ export default function Home() {
     setSubmitSuccess(false)
     
     // Validate all required fields
-    if (!formData.businessName || !formData.phone || !formData.email) {
-      setSubmitError("Prosím vyplňte všechna povinná pole")
+    if (!formData.businessName || !formData.phone || !formData.email || !privacyPolicyAccepted) {
+      setSubmitError("Prosím vyplňte všechna povinná pole a souhlaste s podmínkami ochrany osobních údajů")
       return
     }
     
@@ -234,6 +265,7 @@ export default function Home() {
           phone: "",
           email: ""
         })
+        setPrivacyPolicyAccepted(false)
         setSubmitSuccess(false)
       }, 2000)
     } catch (error) {
@@ -1484,7 +1516,10 @@ export default function Home() {
 
       {/* Contact Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-[600px]">
+        <DialogContent 
+          className="sm:max-w-[600px]"
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center">Vyplňte prosím formulář</DialogTitle>
             <DialogDescription className="text-center">
@@ -1532,6 +1567,30 @@ export default function Home() {
                 className="h-11"
                 required
               />
+            </div>
+            <div className="flex items-start space-x-2">
+              <Checkbox
+                id="privacyPolicy"
+                checked={privacyPolicyAccepted}
+                onCheckedChange={(checked) => setPrivacyPolicyAccepted(checked === true)}
+                className="mt-1"
+              />
+              <Label
+                htmlFor="privacyPolicy"
+                className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+              >
+                Souhlasím s podmínkami{" "}
+                <Link
+                  href="https://herocontent.ai/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-400 hover:text-yellow-500 underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  ochrany osobních údajů
+                </Link>{" "}
+                <span className="text-destructive">*</span>
+              </Label>
             </div>
             {submitError && (
               <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
