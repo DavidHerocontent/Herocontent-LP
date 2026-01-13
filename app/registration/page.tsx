@@ -2,11 +2,12 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
+import { trackRegistrationFormOpen, trackRegistrationComplete } from "@/lib/analytics"
 
 // User app URL - update this to match your user app URL
 const USER_APP_URL = process.env.NEXT_PUBLIC_USER_APP_URL || "http://localhost:3001"
@@ -24,6 +25,11 @@ export default function RegistrationPage() {
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [showError, setShowError] = useState(false)
+
+  // Track when registration form page is viewed
+  useEffect(() => {
+    trackRegistrationFormOpen()
+  }, [])
 
   const validatePhoneNumber = (phone: string): string | null => {
     if (!phone.trim()) {
@@ -171,6 +177,9 @@ export default function RegistrationPage() {
     if (validateForm()) {
       // TODO: Call your registration API to complete registration
       console.log("Complete form submitted:", formData)
+      
+      // Track successful registration completion
+      trackRegistrationComplete(formData.restaurantName)
       
       // After successful registration, redirect to user app
       // You can pass user info or auth token via query params

@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEffect, useState } from "react"
+import { trackLeadFormOpen, trackLeadFormSubmit } from "@/lib/analytics"
 
 function ClientImageGallery({ images }: { images: Array<{ src: string; alt: string }> }) {
   const [api, setApi] = useState<CarouselApi>()
@@ -102,6 +103,13 @@ export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  // Track when lead form dialog opens
+  useEffect(() => {
+    if (isDialogOpen) {
+      trackLeadFormOpen('main_page')
+    }
+  }, [isDialogOpen])
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
@@ -226,6 +234,9 @@ export default function Home() {
       }
 
       setSubmitSuccess(true)
+      
+      // Track successful form submission
+      trackLeadFormSubmit(formData.businessType)
       
       // Close dialog and reset form after a short delay
       setTimeout(() => {

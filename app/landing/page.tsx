@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEffect, useState } from "react"
+import { trackLeadFormOpen, trackLeadFormSubmit } from "@/lib/analytics"
 
 function ClientImageGallery({ images }: { images: Array<{ src: string; alt: string }> }) {
   const [api, setApi] = useState<CarouselApi>()
@@ -117,6 +118,13 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+
+  // Track when lead form dialog opens
+  useEffect(() => {
+    if (isDialogOpen) {
+      trackLeadFormOpen('landing_page')
+    }
+  }, [isDialogOpen])
   const [formData, setFormData] = useState({
     businessName: "",
     phone: "",
@@ -256,6 +264,9 @@ export default function Home() {
       }
 
       setSubmitSuccess(true)
+      
+      // Track successful form submission
+      trackLeadFormSubmit(formData.businessType)
       
       // Close dialog and reset form after a short delay
       setTimeout(() => {
