@@ -30,6 +30,9 @@ export const trackEvent = (
  * Track when a lead form (contact dialog) is opened
  */
 export const trackLeadFormOpen = (source?: string) => {
+  if (typeof window === 'undefined') {
+    return
+  }
   trackEvent('lead_form_open', {
     form_name: 'contact',
     source: source || 'unknown',
@@ -41,6 +44,9 @@ export const trackLeadFormOpen = (source?: string) => {
  * Track when a lead form is successfully submitted
  */
 export const trackLeadFormSubmit = (businessType?: string) => {
+  if (typeof window === 'undefined') {
+    return
+  }
   trackEvent('lead_form_submit', {
     form_name: 'contact',
     business_type: businessType || 'unknown',
@@ -52,6 +58,9 @@ export const trackLeadFormSubmit = (businessType?: string) => {
  * Track when registration form page is viewed
  */
 export const trackRegistrationFormOpen = () => {
+  if (typeof window === 'undefined') {
+    return
+  }
   trackEvent('registration_form_open', {
     page_path: window.location.pathname,
   })
@@ -61,6 +70,9 @@ export const trackRegistrationFormOpen = () => {
  * Track when registration is completed successfully
  */
 export const trackRegistrationComplete = (restaurantName?: string) => {
+  if (typeof window === 'undefined') {
+    return
+  }
   trackEvent('registration_complete', {
     restaurant_name: restaurantName || 'unknown',
     page_path: window.location.pathname,
