@@ -107,8 +107,7 @@ export default function Home() {
   const [formData, setFormData] = useState({
     businessName: "",
     phone: "",
-    email: "",
-    businessType: ""
+    email: ""
   })
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
   
@@ -203,7 +202,7 @@ export default function Home() {
     setSubmitSuccess(false)
     
     // Validate all required fields
-    if (!formData.businessName || !formData.phone || !formData.email || !formData.businessType) {
+    if (!formData.businessName || !formData.phone || !formData.email) {
       setSubmitError("Prosím vyplňte všechna povinná pole")
       return
     }
@@ -233,8 +232,7 @@ export default function Home() {
         setFormData({
           businessName: "",
           phone: "",
-          email: "",
-          businessType: ""
+          email: ""
         })
         setSubmitSuccess(false)
       }, 2000)
@@ -1486,23 +1484,24 @@ export default function Home() {
 
       {/* Contact Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Vyplňte prosím formulář</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-2xl font-bold text-center">Vyplňte prosím formulář</DialogTitle>
+            <DialogDescription className="text-center">
               Spojíme se s vámi pro ukázku služby a bezstarostné zahájení spolupráce.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4 mt-4">
             <div className="space-y-2">
               <Label htmlFor="businessName">
-                Název podniku <span className="text-destructive">*</span>
+                Název vašeho gastro podniku <span className="text-destructive">*</span>
               </Label>
               <Input
                 id="businessName"
-                placeholder="Název podniku"
+                placeholder="Název vašeho gastro podniku"
                 value={formData.businessName}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("businessName", e.target.value)}
+                className="h-11"
                 required
               />
             </div>
@@ -1513,9 +1512,10 @@ export default function Home() {
               <Input
                 id="phone"
                 type="tel"
-                placeholder="+420 (000) 000-000"
+                placeholder="+420 000 000 000"
                 value={formData.phone}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
+                className="h-11"
                 required
               />
             </div>
@@ -1529,29 +1529,9 @@ export default function Home() {
                 placeholder="Váš e-mail"
                 value={formData.email}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
+                className="h-11"
                 required
               />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="businessType">
-                Typ podniku <span className="text-destructive">*</span>
-              </Label>
-              <Select
-                value={formData.businessType}
-                onValueChange={(value: string) => handleInputChange("businessType", value)}
-                required
-              >
-                <SelectTrigger id="businessType" className="w-full">
-                  <SelectValue placeholder="Vyberte typ podniku" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="restaurace">Restaurace</SelectItem>
-                  <SelectItem value="kavarna">Kavárna</SelectItem>
-                  <SelectItem value="pub-bar">Pub, bar</SelectItem>
-                  <SelectItem value="rozvoz">Rozvoz</SelectItem>
-                  <SelectItem value="jine">Jiné</SelectItem>
-                </SelectContent>
-              </Select>
             </div>
             {submitError && (
               <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
@@ -1571,6 +1551,9 @@ export default function Home() {
               >
                 {isSubmitting ? "Odesílám..." : "Odeslat žádost"}
               </Button>
+              <p className="text-sm text-center text-muted-foreground mt-3">
+                Získejte 12 příspěvků zdarma pro vaše sítě
+              </p>
             </div>
           </form>
         </DialogContent>
