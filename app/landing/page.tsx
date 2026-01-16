@@ -1253,13 +1253,19 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">20 příběhů měsíčně</span>
+                      <span className="text-sm">8 příspěvků měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">12 příspěvků měsíčně</span>
+                      <span className="text-sm">15 stories měsíčně</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">2 příspěvky nebo stories na přání</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -1271,37 +1277,19 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">2 extra kreativy na přání měsíčně</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-3">Služby</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
+                      <span className="text-sm">publikace na Facebooku a Instagramu</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">Osobní zákaznická podpora</span>
+                      <span className="text-sm">správa přes WhatsApp</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">Moderování příspěvků marketingovým specialistou</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Automatické denní/týdenní menu</span>
+                      <span className="text-sm">pravidelný reporting</span>
                     </div>
                   </div>
                 </div>
@@ -1335,31 +1323,31 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">20 příběhů měsíčně</span>
+                      <span className="text-sm">+4 příspěvky měsíčně (celkem 12 příspěvků)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">12 příspěvků měsíčně</span>
+                      <span className="text-sm">+15 stories měsíčně (celkem 30 stories)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">2 AI reels</span>
+                      <span className="text-sm">2 AI Reels videa měsíčně (vytvořené z vašich fotek nebo videí)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">2 reklamní kampaně měsíčně</span>
+                      <span className="text-sm">+1 reklamní kampaň měsíčně (celkem 2 reklamní kampaně)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">4 extra kreativy na přání měsíčně</span>
+                      <span className="text-sm">+2 příspěvky nebo stories na přání</span>
                     </div>
                   </div>
                 </div>
