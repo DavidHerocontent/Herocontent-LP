@@ -289,21 +289,39 @@ export function LandingPageContent() {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('/api/contact', {
+      const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
+      
+      if (!webhookUrl) {
+        console.error('NEXT_PUBLIC_N8N_WEBHOOK_URL not configured')
+        throw new Error('Služba není dostupná. Zkuste to prosím později.')
+      }
+
+      // Build payload matching Tilda format for n8n compatibility
+      const webhookPayload = {
+        name: formData.businessName,
+        company: formData.businessName,
+        phone: formData.phone,
+        email: formData.email,
+        COOKIES: trackingData.cookies,
+        referer: trackingData.referer,
+        utm_source: trackingData.utm_source,
+        utm_medium: trackingData.utm_medium,
+        utm_content: trackingData.utm_content,
+        source: 'herocontent-lp-2026',
+        timestamp: new Date().toISOString(),
+      }
+
+      // Send directly to n8n webhook (client-side)
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          ...trackingData
-        }),
+        body: JSON.stringify(webhookPayload),
       })
 
-      const data = await response.json()
-
       if (!response.ok) {
-        throw new Error(data.error || 'Něco se pokazilo')
+        throw new Error('Něco se pokazilo při odesílání')
       }
 
       setSubmitSuccess(true)

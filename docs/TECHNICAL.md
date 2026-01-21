@@ -14,8 +14,6 @@
 
 ```
 ├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   │   └── contact/       # Contact form API endpoint
 │   ├── landing/           # Landing page
 │   ├── registration/      # Registration page
 │   ├── page.tsx           # Main page
@@ -141,41 +139,11 @@ See `docs/PAGE_SWAP.md` for switching between page variants.
 - `components/typewriter-text.tsx` - Animated text component
 - `components/ui/*` - Reusable UI components (shadcn/ui)
 
-### API Routes
+### Form Submissions
 
-#### POST `/api/contact`
+Contact form submissions go directly from the client to the n8n webhook (`NEXT_PUBLIC_N8N_WEBHOOK_URL`). This bypasses the need for server-side API routes and works reliably with static hosting.
 
-Handles contact form submissions.
-
-**Request Body:**
-```json
-{
-  "businessName": "string",
-  "phone": "string",
-  "email": "string",
-  "businessType": "restaurace" | "kavarna" | "pub-bar" | "rozvoz" | "jine"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Form submitted successfully"
-}
-```
-
-**Error Response:**
-```json
-{
-  "error": "Error message"
-}
-```
-
-**Implementation:**
-- Validates required fields
-- Sends notification to Telegram
-- Returns success/error response
+**Implementation:** See `components/pages/landing-page-content.tsx` → `handleSubmit` function.
 
 ## Styling
 
@@ -306,9 +274,9 @@ See [Google Analytics Documentation](./GOOGLE_ANALYTICS.md) for detailed impleme
 Ensure all environment variables are set in your deployment platform:
 
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+- `NEXT_PUBLIC_META_PIXEL_ID`
 - `NEXT_PUBLIC_USER_APP_URL`
-- `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_CHAT_ID`
+- `NEXT_PUBLIC_N8N_WEBHOOK_URL`
 
 ### Build Configuration
 
