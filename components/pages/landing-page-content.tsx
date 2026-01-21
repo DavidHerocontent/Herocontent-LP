@@ -1425,42 +1425,6 @@ export function LandingPageContent() {
                     </div>
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="font-semibold mb-3">Služby</h4>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Osobní zákaznická podpora</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Moderování příspěvků marketingovým specialistou</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Automatické denní/týdenní menu</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">Personalizované návrhy na reklamní akce</span>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <Button 
