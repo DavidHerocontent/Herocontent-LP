@@ -1,89 +1,100 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '214753617:a74497a05c605e16f85d387acb30568f'
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '214753617'
-// const WEBHOOK_URL = 'https://d3d.herocontent.ai/webhook/tilda' // Disabled for now
+/**
+ * Contact Form API Route
+ * 
+ * Handles contact form submissions and sends data to n8n webhook.
+ * 
+ * Required environment variables:
+ * - N8N_WEBHOOK_URL: n8n webhook URL for processing form submissions
+ * 
+ * In development, if webhook URL is not configured,
+ * the form will log data to console and return success.
+ */
+
+const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL
+const isProduction = process.env.NODE_ENV === 'production'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { businessName, phone, email, businessType } = body
+    const { 
+      businessName, 
+      phone, 
+      email, 
+      // Tracking data from client
+      cookies,
+      referer,
+      utm_source,
+      utm_medium,
+      utm_content
+    } = body
 
     // Validate required fields
-    if (!businessName || !phone || !email || !businessType) {
+    if (!businessName || !phone || !email) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'Business name, phone, and email are required' },
         { status: 400 }
       )
     }
 
-    // Format the business type for display
-    const businessTypeMap: Record<string, string> = {
-      restaurace: 'Restaurace',
-      kavarna: 'Kavárna',
-      'pub-bar': 'Pub, bar',
-      rozvoz: 'Rozvoz',
-      jine: 'Jiné'
+    // Build payload matching Tilda format for n8n compatibility
+    const webhookPayload = {
+      // Use businessName for both name and company as per requirements
+      name: businessName,
+      company: businessName,
+      phone,
+      email,
+      // Tracking data
+      COOKIES: cookies || '',
+      referer: referer || '',
+      utm_source: utm_source || '',
+      utm_medium: utm_medium || '',
+      utm_content: utm_content || '',
+      // Metadata
+      source: 'herocontent-lp-2026',
+      timestamp: new Date().toISOString(),
     }
 
-    const businessTypeDisplay = businessTypeMap[businessType] || businessType
+    // Check if webhook is configured
+    if (!N8N_WEBHOOK_URL) {
+      if (isProduction) {
+        // In production, this is an error - webhook must be configured
+        console.error('CRITICAL: N8N_WEBHOOK_URL not configured in production')
+        return NextResponse.json(
+          { error: 'Form submission service unavailable. Please try again later.' },
+          { status: 503 }
+        )
+      } else {
+        // In development, log the form data and return success
+        console.log('📧 [DEV MODE] Form submission received (n8n webhook not configured):')
+        console.log('  Payload:', JSON.stringify(webhookPayload, null, 2))
+        return NextResponse.json(
+          { success: true, message: 'Form submitted successfully (dev mode - no webhook sent)' },
+          { status: 200 }
+        )
+      }
+    }
 
-    // Format message for Telegram
-    const message = `🔔 *Nová žádost o kontakt - HeroContent*
-
-📋 *Název podniku:* ${businessName}
-📞 *Telefon:* ${phone}
-📧 *Email:* ${email}
-🏢 *Typ podniku:* ${businessTypeDisplay}
-
-_Čas: ${new Date().toLocaleString('cs-CZ')}_`
-
-    // Prepare webhook payload (disabled for now)
-    // const webhookPayload = {
-    //   businessName,
-    //   phone,
-    //   email,
-    //   businessType: businessTypeDisplay,
-    //   timestamp: new Date().toISOString(),
-    // }
-
-    // Send to Telegram
-    const telegramResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    // Send to n8n webhook
+    const webhookResponse = await fetch(N8N_WEBHOOK_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
+      body: JSON.stringify(webhookPayload),
     })
 
-    // Check Telegram response
-    if (!telegramResponse.ok) {
-      const errorData = await telegramResponse.json().catch(() => ({}))
-      console.error('Telegram API error:', errorData)
+    // Check webhook response
+    if (!webhookResponse.ok) {
+      const errorText = await webhookResponse.text().catch(() => 'Unknown error')
+      console.error('n8n webhook error:', errorText)
       return NextResponse.json(
-        { error: 'Failed to send message to Telegram' },
+        { error: 'Failed to process form submission' },
         { status: 500 }
       )
     }
 
-    // Webhook disabled for now
-    // const webhookResponse = await fetch(WEBHOOK_URL, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(webhookPayload),
-    // })
-    // if (!webhookResponse.ok) {
-    //   const errorText = await webhookResponse.text().catch(() => 'Unknown error')
-    //   console.error('Webhook error:', errorText)
-    // }
-
-    // Return success even if one of the services fails (graceful degradation)
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
       { status: 200 }
@@ -96,4 +107,3 @@ _Čas: ${new Date().toLocaleString('cs-CZ')}_`
     )
   }
 }
-

@@ -74,10 +74,30 @@
 
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID | Yes | `G-0MPZSF8FDF` |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID | Production only | - |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel ID for Facebook/Instagram ads tracking | Production only | - |
 | `NEXT_PUBLIC_USER_APP_URL` | User app redirect URL | Yes | `http://localhost:3001` |
-| `TELEGRAM_BOT_TOKEN` | Telegram bot token for notifications | Yes | - |
-| `TELEGRAM_CHAT_ID` | Telegram chat ID for notifications | Yes | - |
+| `N8N_WEBHOOK_URL` | n8n webhook URL for form submissions | Production only | - |
+
+See `.env.example` for a template with all variables and documentation.
+
+### Environment-Based Behavior
+
+The application automatically adjusts behavior based on `NODE_ENV`:
+
+| Feature | Development | Production |
+|---------|-------------|------------|
+| Google Analytics | Disabled (no tracking) | Enabled |
+| Meta Pixel | Disabled (no tracking) | Enabled |
+| Vercel Analytics | Auto-disabled | Enabled |
+| n8n webhook | Optional (logs to console if not configured) | Required (returns 503 if not configured) |
+| Source maps | Enabled | Disabled |
+
+**How it works:**
+- `pnpm dev` → `NODE_ENV=development` (analytics disabled, webhook optional)
+- `pnpm build && pnpm start` → `NODE_ENV=production` (analytics enabled, webhook required)
+
+This prevents development traffic from polluting analytics data and allows local testing without n8n credentials.
 
 ## Development
 
@@ -103,13 +123,22 @@ pnpm lint         # Run ESLint
 
 #### Page Components
 
-- `app/page.tsx` - Main landing page
-- `app/landing/page.tsx` - Simplified landing page
+- `app/page.tsx` - Root index page (thin wrapper, imports page content)
+- `app/landing/page.tsx` - Landing page route (thin wrapper)
 - `app/registration/page.tsx` - Registration form page
+- `app/login/page.tsx` - Login page
+
+#### Page Content Components
+
+- `components/pages/landing-page-content.tsx` - Simplified landing page for Meta Ads
+- `components/pages/main-page-content.tsx` - Original full-featured main page
+
+See `docs/PAGE_SWAP.md` for switching between page variants.
 
 #### Shared Components
 
-- `components/analytics.tsx` - Google Analytics tracking
+- `components/analytics.tsx` - Google Analytics tracking (production only)
+- `components/analytics-wrapper.tsx` - Client-side analytics loader
 - `components/typewriter-text.tsx` - Animated text component
 - `components/ui/*` - Reusable UI components (shadcn/ui)
 
