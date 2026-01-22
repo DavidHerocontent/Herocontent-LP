@@ -1,16 +1,22 @@
 /**
- * Google Analytics 4 Event Tracking Utility
+ * Analytics Event Tracking Utility
  * 
- * This utility provides functions to track custom events in GA4.
- * All events follow GA4 recommended event naming conventions.
+ * This utility provides functions to track custom events in:
+ * - Google Analytics 4 (GA4)
+ * - Meta Pixel (Facebook)
+ * 
+ * All events follow platform-specific naming conventions.
+ * Analytics only fire in production environment.
  */
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 // Track a custom event in Google Analytics
 export const trackEvent = (
   eventName: string,
   parameters?: Record<string, string | number | boolean>
 ) => {
-  if (typeof window === 'undefined') {
+  if (typeof window === 'undefined' || !isProduction) {
     return
   }
 
@@ -21,6 +27,24 @@ export const trackEvent = (
       // Add timestamp for debugging
       event_timestamp: new Date().toISOString(),
     })
+  }
+}
+
+// Track a Meta Pixel event
+export const trackMetaPixelEvent = (
+  eventName: string,
+  parameters?: Record<string, string | number>
+) => {
+  if (typeof window === 'undefined' || !isProduction) {
+    return
+  }
+
+  if (window.fbq) {
+    if (parameters) {
+      window.fbq('track', eventName, parameters)
+    } else {
+      window.fbq('track', eventName)
+    }
   }
 }
 
@@ -42,15 +66,24 @@ export const trackLeadFormOpen = (source?: string) => {
 
 /**
  * Track when a lead form is successfully submitted
+ * Fires both GA4 and Meta Pixel Lead events
  */
 export const trackLeadFormSubmit = (businessType?: string) => {
   if (typeof window === 'undefined') {
     return
   }
+
+  // Google Analytics event
   trackEvent('lead_form_submit', {
     form_name: 'contact',
     business_type: businessType || 'unknown',
     page_path: window.location.pathname,
+  })
+
+  // Meta Pixel Lead conversion
+  trackMetaPixelEvent('Lead', {
+    content_name: 'contact_form',
+    content_category: businessType || 'landing',
   })
 }
 
@@ -79,9 +112,10 @@ export const trackRegistrationComplete = (restaurantName?: string) => {
   })
 }
 
-// TypeScript declaration for window.gtag
+// TypeScript declarations for analytics
 declare global {
   interface Window {
     gtag: (...args: any[]) => void
+    fbq: (...args: any[]) => void
   }
 }
