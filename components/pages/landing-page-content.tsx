@@ -423,7 +423,7 @@ export function LandingPageContent() {
               Služby
             </Link>
             <Link href="#cenik" className="text-sm hover:text-yellow-400 transition-colors">
-              Cenník
+              Ceník
             </Link>
             <Link href="#klienti" className="text-sm hover:text-yellow-400 transition-colors">
               Ukázka
@@ -461,7 +461,7 @@ export function LandingPageContent() {
                     className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Cenník
+                    Ceník
                   </Link>
                   <Link 
                     href="#klienti" 
